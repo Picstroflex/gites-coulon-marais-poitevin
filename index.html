@@ -4,435 +4,558 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gîte du Port aux Moules – Location Coulon, Marais Poitevin | Venise Verte</title>
-<meta name="description" content="Location gîte de charme à Coulon, au cœur du Marais Poitevin. Maison poitevine authentique, configuration modulable 1 à 15 personnes. Accès direct canaux, barques et vélos à 100m. Réservez en ligne.">
-<meta name="keywords" content="gîte Coulon, location Marais Poitevin, Venise Verte, hébergement Coulon, gîte 79510">
+<title>LES GÎTES du Port aux Moules – Location Coulon, Marais Poitevin | Venise Verte</title>
+<meta name="description" content="Location gîte de charme à Coulon, au cœur du Marais Poitevin. Maison poitevine authentique modulable de 1 à 15 personnes, 1 à 8 pièces. Accès direct canaux, barques et vélos à 100m. Réservez en ligne.">
+<meta name="keywords" content="gîte Coulon, location Marais Poitevin, Venise Verte, hébergement Coulon, gîte 79510, location vacances Deux-Sèvres, maison poitevine">
 <meta name="author" content="Gîtes du Port aux Moules">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://VOTRE-DOMAINE.fr/">
+<link rel="canonical" href="https://picstroflex.github.io/gites-port-aux-moules-coulon/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Gîte du Port aux Moules – Coulon, Marais Poitevin">
-<meta property="og:description" content="Location gîte de charme à Coulon, au cœur du Marais Poitevin. Modulable 1 à 15 personnes. Réservez en ligne.">
+<meta property="og:title" content="LES GÎTES du Port aux Moules – Coulon, Marais Poitevin">
+<meta property="og:description" content="Location gîte de charme à Coulon, au cœur du Marais Poitevin. Modulable 1 à 15 personnes, 1 à 8 pièces. Barques et vélos à 100m.">
 <meta property="og:image" content="assets/hero.jpg">
 <meta property="og:url" content="https://VOTRE-DOMAINE.fr/">
 <meta property="og:locale" content="fr_FR">
 
-<!-- Schema.org -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": ["LodgingBusiness", "VacationRental"],
-  "name": "Gîtes du Port aux Moules",
-  "description": "Maison poitevine authentique au cœur du Marais Poitevin. Location de vacances modulable de 1 à 15 personnes.",
-  "telephone": "+33668492533",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "10-12 Rue du Port aux Moules",
-    "addressLocality": "Coulon",
-    "postalCode": "79510",
-    "addressCountry": "FR"
-  },
-  "priceRange": "100€ – 400€ / nuit",
-  "amenityFeature": [
-    {"@type": "LocationFeatureSpecification", "name": "Barbecue", "value": true},
-    {"@type": "LocationFeatureSpecification", "name": "Jardin clôturé", "value": true},
-    {"@type": "LocationFeatureSpecification", "name": "Location barques à 100m", "value": true}
-  ],
-  "petsAllowed": false
-}
-</script>
-
 <!-- Polices -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<!-- Leaflet Map -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ========================================================
-   DESIGN SYSTEM — PALETTE MARAIS POITEVIN
-   ======================================================== */
 :root {
-  --eau:        #2d6a6a;
-  --eau-clair:  #4a9999;
-  --eau-pale:   #e8f4f4;
-  --pierre:     #6b5f52;
-  --sable:      #f5f0e8;
-  --or:         #c9962a;
-  --or-pale:    #f7e9c8;
-  --nuit:       #1a2e2e;
-  --blanc:      #fdfcf9;
-  --texte:      #2c2620;
-  --gris:       #7a746e;
-  --rule:       rgba(45,106,106,0.15);
-  --shadow:     0 4px 32px rgba(26,46,46,0.12);
-  --danger:     #c0392b;
-  --danger-pale: #f9e6e4;
+  --eau: #2d6a6a;
+  --eau-clair: #4a9999;
+  --eau-pale: #e8f4f4;
+  --sable: #f5f0e8;
+  --or: #c9962a;
+  --or-pale: #f7e9c8;
+  --nuit: #1a2e2e;
+  --blanc: #fdfcf9;
+  --texte: #000000;
+  --gris: #000000;
+  --rule: rgba(45,106,106,0.15);
+  --shadow: 0 4px 32px rgba(26,46,46,0.12);
+  --danger: #c0392b;
 }
 
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; font-size:16px; }
-body { background:var(--blanc); color:var(--texte); font-family:'Raleway',sans-serif; font-weight:400; overflow-x:hidden; }
-img { max-width:100%; height:auto; display:block; }
-a { color:inherit; text-decoration:none; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--blanc); color:var(--texte); font-family:'Raleway',sans-serif; }
 
-h1,h2,h3,h4 { font-family:'Playfair Display',serif; font-weight:400; line-height:1.15; }
-.eyebrow { font-size:11px; letter-spacing:.5em; text-transform:uppercase; color:var(--or); font-weight:600; }
-.section-title { font-size:clamp(32px,4vw,52px); color:var(--nuit); }
+h1,h2,h3,h4 { font-family:'Playfair Display',serif; font-weight:400; color:#000000; }
+.section-title { font-size:clamp(32px,4vw,52px); color:#000000; }
 .section-title em { font-style:italic; color:var(--eau); }
+.eyebrow { font-size:11px; letter-spacing:.5em; text-transform:uppercase; color:var(--or); }
 
 .btn-primary {
-  display:inline-flex; align-items:center; gap:8px;
   background:var(--eau); color:var(--blanc);
-  font-family:'Raleway',sans-serif; font-size:12px; font-weight:600;
-  letter-spacing:.25em; text-transform:uppercase;
   padding:16px 36px; border:2px solid var(--eau);
-  transition:all .3s; cursor:pointer;
+  font-size:12px; font-weight:600; letter-spacing:.25em;
+  text-transform:uppercase; cursor:pointer;
+  transition:all .3s; display:inline-block;
+  text-decoration: none;
 }
 .btn-primary:hover { background:transparent; color:var(--eau); }
 .btn-outline {
-  display:inline-flex; align-items:center; gap:8px;
   background:transparent; color:var(--blanc);
-  font-family:'Raleway',sans-serif; font-size:12px; font-weight:600;
-  letter-spacing:.25em; text-transform:uppercase;
   padding:16px 36px; border:2px solid rgba(255,255,255,.7);
-  transition:all .3s; cursor:pointer;
+  font-size:12px; font-weight:600; letter-spacing:.25em;
+  text-transform:uppercase; cursor:pointer;
+  transition:all .3s; display:inline-block;
+  text-decoration: none;
 }
 .btn-outline:hover { background:var(--blanc); color:var(--nuit); border-color:var(--blanc); }
 
-/* Navigation */
 nav {
   position:fixed; top:0; left:0; right:0; z-index:500;
   display:flex; justify-content:space-between; align-items:center;
   padding:24px 56px;
   transition:all .4s;
 }
-nav.scrolled { background:rgba(26,46,46,.96); backdrop-filter:blur(12px); padding:14px 56px; box-shadow:0 2px 24px rgba(0,0,0,.2); }
-.nav-brand { display:flex; flex-direction:column; line-height:1; }
-.nav-brand-name { font-family:'Playfair Display',serif; font-size:18px; font-weight:600; color:var(--blanc); }
-.nav-brand-sub { font-size:9px; letter-spacing:.4em; text-transform:uppercase; color:rgba(255,255,255,.6); margin-top:3px; }
-.nav-links { display:flex; gap:36px; list-style:none; align-items:center; }
-.nav-links a { font-size:11px; letter-spacing:.25em; text-transform:uppercase; color:rgba(255,255,255,.85); font-weight:500; transition:color .3s; position:relative; padding-bottom:4px; }
-.nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:1px; background:var(--or); transition:width .3s; }
-.nav-links a:hover { color:var(--blanc); }
-.nav-links a:hover::after { width:100%; }
+nav.scrolled { background:rgba(26,46,46,.96); backdrop-filter:blur(12px); padding:14px 56px; }
+.nav-brand-name { font-family:'Playfair Display',serif; font-size:18px; color:var(--blanc); text-decoration:none; }
+.nav-links { display:flex; gap:36px; list-style:none; }
+.nav-links a { font-size:11px; letter-spacing:.25em; text-transform:uppercase; color:rgba(255,255,255,.85); text-decoration:none; transition:color .3s; }
+.nav-links a:hover { color:var(--or); }
 .nav-cta { background:var(--or) !important; color:var(--nuit) !important; padding:10px 22px !important; border-radius:2px; }
-.nav-cta::after { display:none !important; }
 
-/* Hero */
-.hero { min-height:100vh; position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; }
-.hero-bg { position:absolute; inset:0; z-index:0; background: linear-gradient(160deg, #1a3a3a 0%, #2d6a6a 35%, #1a2e2e 70%, #0e1e1e 100%); }
-.hero-bg-overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(to bottom, rgba(0,0,0,.25) 0%, rgba(26,46,46,.45) 40%, rgba(0,0,0,.65) 100%); }
-.hero-content { position:relative; z-index:10; text-align:center; padding:0 24px; animation: heroIn 1.1s ease both; }
-@keyframes heroIn { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:none; } }
-.hero-eyebrow { font-size:11px; letter-spacing:.55em; text-transform:uppercase; color:var(--or); font-weight:600; margin-bottom:20px; }
-.hero-title { font-size:clamp(40px,6vw,80px); color:var(--blanc); line-height:1.1; margin-bottom:12px; }
+.hero { min-height:100vh; position:relative; display:flex; align-items:center; justify-content:center; background: linear-gradient(160deg, #1a3a3a, #2d6a6a, #1a2e2e); }
+.hero-content { text-align:center; z-index:10; padding:0 24px; }
+.hero-eyebrow { font-size:11px; letter-spacing:.55em; text-transform:uppercase; color:var(--or); margin-bottom:20px; }
+.hero-title { font-size:clamp(40px,6vw,80px); color:var(--blanc); line-height:1.1; }
 .hero-title em { font-style:italic; color:#a8d8d8; display:block; }
-.hero-subtitle { font-size:16px; color:rgba(255,255,255,.8); line-height:1.8; max-width:560px; margin:0 auto 40px; font-weight:300; }
-.hero-ctas { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
-.hero-badges { position:absolute; bottom:36px; left:50%; transform:translateX(-50%); z-index:10; display:flex; gap:24px; flex-wrap:wrap; justify-content:center; }
-.hero-badge { background:rgba(255,255,255,.1); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.2); padding:10px 20px; color:var(--blanc); font-size:12px; letter-spacing:.15em; text-transform:uppercase; }
-.hero-badge strong { color:var(--or); }
+.hero-subtitle { font-size:16px; color:rgba(255,255,255,.8); max-width:560px; margin:20px auto; line-height:1.8; }
+.hero-ctas { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-top:30px; }
+.hero-badges { position:absolute; bottom:36px; left:0; right:0; display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
+.hero-badge { background:rgba(255,255,255,.1); backdrop-filter:blur(8px); padding:10px 20px; color:var(--blanc); font-size:12px; letter-spacing:.15em; border-radius:30px; }
 
-/* Sections */
 section { padding:100px 56px; }
 .section-inner { max-width:1200px; margin:0 auto; }
-.section-header { margin-bottom:60px; }
-.section-header.centered { text-align:center; }
+.section-header { margin-bottom:60px; text-align:center; }
 .section-tag { display:inline-flex; align-items:center; gap:12px; margin-bottom:16px; }
 .section-tag::before { content:''; width:32px; height:2px; background:var(--or); }
 
-/* Présentation */
 .about { background:var(--sable); }
-.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
-.about-photos { display:grid; grid-template-columns:1fr 1fr; gap:12px; position:relative; }
-.photo-placeholder { background: linear-gradient(135deg, #c4d8d8 0%, #a8c8c8 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:var(--eau); font-size:11px; text-transform:uppercase; font-weight:600; border-radius:2px; min-height:200px; }
-.photo-tall { grid-row: span 2; min-height:420px; }
-.about-badge { position:absolute; bottom:-16px; right:-16px; background:var(--eau); color:var(--blanc); padding:20px 24px; text-align:center; box-shadow:var(--shadow); }
-.about-badge-num { font-size:36px; line-height:1; }
-.about-badge-txt { font-size:9px; letter-spacing:.3em; margin-top:4px; }
-.about-desc { font-size:15px; line-height:2; color:var(--gris); margin-bottom:24px; }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+.about-text p { font-size:15px; line-height:2; color:#000000; margin-bottom:20px; }
+.features-list { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:30px 0; }
+.feature-item { display:flex; align-items:center; gap:12px; font-size:14px; color:#000000; }
+.feature-icon { width:40px; height:40px; background:var(--eau-pale); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; }
+.about-badge { background:var(--eau); color:white; padding:20px; text-align:center; border-radius:16px; margin-top:20px; }
+.about-badge .big-number { font-size:42px; font-weight:700; font-family:'Playfair Display',serif; }
 
-/* Info chien interdite */
-.no-pets-banner { background:var(--danger-pale); border-left:4px solid var(--danger); padding:16px 24px; margin:24px 0; display:flex; align-items:center; gap:12px; border-radius:4px; }
-.no-pets-banner span:first-child { font-size:24px; }
-.no-pets-banner p { font-size:13px; color:var(--danger); font-weight:600; margin:0; }
-
-/* Tarifs spéciaux 10 et 12 rue */
-.properties-showcase { background:var(--eau-pale); padding:60px 0; margin-top:40px; }
-.properties-grid { display:grid; grid-template-columns:1fr 1fr; gap:30px; }
-.property-card { background:var(--blanc); border-radius:12px; overflow:hidden; box-shadow:var(--shadow); }
-.property-header { background:var(--nuit); color:var(--blanc); padding:20px 24px; }
-.property-header h3 { font-size:24px; margin-bottom:4px; }
-.property-header .property-address { font-size:13px; opacity:0.7; font-family:'Raleway',sans-serif; }
-.property-content { padding:24px; }
-.property-features { display:flex; flex-wrap:wrap; gap:12px; margin:16px 0; }
-.property-feature { background:var(--sable); padding:6px 12px; border-radius:20px; font-size:12px; display:flex; align-items:center; gap:6px; }
-.property-price { font-size:28px; font-weight:700; color:var(--eau); margin:16px 0 8px; }
-.property-price span { font-size:14px; font-weight:400; color:var(--gris); }
-.property-note { font-size:12px; color:var(--gris); margin-top:12px; padding-top:12px; border-top:1px solid var(--rule); }
-
-/* Configuration options */
-.config-options { display:flex; flex-direction:column; gap:12px; margin:20px 0; }
-.config-option { display:flex; align-items:center; justify-content:space-between; padding:16px; border:2px solid var(--rule); border-radius:8px; cursor:pointer; transition:all .2s; }
-.config-option:hover { border-color:var(--eau); background:var(--eau-pale); }
-.config-option.selected { border-color:var(--eau); background:var(--eau-pale); }
-.config-option-info h4 { font-size:16px; margin-bottom:4px; }
-.config-option-info p { font-size:12px; color:var(--gris); }
-.config-option-price { font-weight:700; color:var(--eau); font-size:18px; }
-.config-option-price small { font-size:12px; font-weight:400; }
-
-/* Grille tarifs */
-.tarifs { background:var(--blanc); }
-.tarifs-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:40px; }
-.tarif-card { background:var(--sable); padding:30px 24px; border-radius:8px; text-align:center; }
-.tarif-card h4 { font-size:18px; margin-bottom:8px; }
-.tarif-card .price { font-size:32px; font-weight:700; color:var(--eau); margin:16px 0; }
-.tarif-card .price span { font-size:14px; font-weight:400; }
-.tarif-card ul { list-style:none; margin-top:16px; }
-.tarif-card li { font-size:12px; padding:4px 0; color:var(--gris); }
-.discount-note { background:var(--or-pale); padding:16px 24px; margin-top:32px; border-radius:8px; text-align:center; font-size:14px; }
-
-/* Réservation */
-.reservation { background:var(--blanc); }
-.resa-inner { display:grid; grid-template-columns:1fr 1.2fr; gap:80px; align-items:start; }
-.contact-block { background:var(--sable); padding:28px 24px; border-left:3px solid var(--eau); margin-top:32px; }
-.contact-block h4 { font-size:14px; letter-spacing:.2em; text-transform:uppercase; color:var(--eau); margin-bottom:16px; }
-.contact-line { display:flex; align-items:center; gap:12px; font-size:14px; margin-bottom:10px; }
-.resa-form-wrap { background:var(--sable); padding:40px; border:1px solid var(--rule); }
-
-/* Formulaires */
-.progress { display:flex; align-items:center; margin-bottom:32px; gap:6px; }
-.p-step { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; }
-.p-dot { width:34px; height:34px; border-radius:50%; border:2px solid var(--rule); background:var(--blanc); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:var(--gris); transition:all .35s; }
-.p-dot.active { border-color:var(--eau); color:var(--eau); background:var(--eau-pale); }
-.p-dot.done { background:var(--eau); border-color:var(--eau); color:var(--blanc); }
-.p-label { font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:var(--gris); text-align:center; }
-.p-label.active { color:var(--eau); font-weight:600; }
-.p-line { flex:1; height:2px; background:var(--rule); margin-bottom:20px; }
-.p-line.done { background:var(--eau); }
-
-.step { display:none; }
-.step.active { display:block; }
-.step-title { font-family:'Playfair Display',serif; font-size:22px; color:var(--nuit); margin-bottom:6px; }
-.step-title em { font-style:italic; color:var(--eau); }
-
-.date-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px; }
-.date-field label { display:block; font-size:10px; letter-spacing:.25em; text-transform:uppercase; color:var(--gris); margin-bottom:8px; }
-.date-field-inner { background:var(--blanc); border:2px solid var(--rule); padding:14px 16px; cursor:pointer; position:relative; }
-.date-display { font-size:15px; font-weight:500; color:var(--nuit); }
-.date-display.placeholder { color:var(--gris); font-weight:400; font-size:13px; }
-.mini-cal { display:none; position:absolute; top:calc(100% + 4px); left:0; right:0; z-index:200; background:var(--blanc); border:2px solid var(--eau); box-shadow:var(--shadow); padding:16px; }
-.mini-cal.open { display:block; }
-
-.persons-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0; }
-.form-input, .form-textarea, .time-select { width:100%; background:var(--blanc); border:2px solid var(--rule); padding:12px 14px; font-family:'Raleway',sans-serif; font-size:14px; outline:none; }
-.form-input:focus, .form-textarea:focus, .time-select:focus { border-color:var(--eau); }
-
-.recap-box { background:var(--blanc); border:2px solid var(--rule); padding:16px; margin-bottom:20px; }
-.recap-row { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--rule); }
-.recap-highlight { background:var(--eau-pale); border:2px solid var(--eau); padding:12px 16px; margin-top:8px; text-align:center; }
-
-.step-btn { width:100%; padding:16px; background:var(--eau); color:var(--blanc); font-weight:700; letter-spacing:.3em; text-transform:uppercase; border:2px solid var(--eau); cursor:pointer; margin-top:8px; }
-.step-btn:disabled { opacity:.4; cursor:not-allowed; }
-.back-btn { background:none; border:none; color:var(--gris); cursor:pointer; font-size:12px; letter-spacing:.2em; text-transform:uppercase; padding:0 0 16px; display:flex; align-items:center; gap:6px; }
-.form-err { font-size:11px; color:var(--danger); margin-top:6px; display:none; }
-.acompte-notice { background:var(--or-pale); padding:12px; font-size:12px; text-align:center; margin:16px 0 0; border-radius:4px; }
-
-/* Footer */
-footer { background:var(--nuit); padding:60px 56px 36px; }
-.footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:60px; }
-.footer-brand-name { font-family:'Playfair Display',serif; font-size:22px; color:var(--blanc); }
-.footer-desc { font-size:13px; color:rgba(255,255,255,.5); line-height:1.9; margin-top:12px; }
-.footer-col h4 { font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--or); margin-bottom:20px; }
-.footer-links { list-style:none; }
-.footer-links li { margin-bottom:10px; }
-.footer-links a { font-size:13px; color:rgba(255,255,255,.5); transition:color .3s; }
-.footer-links a:hover { color:var(--eau-clair); }
-.footer-bottom { border-top:1px solid rgba(255,255,255,.08); padding-top:28px; margin-top:48px; display:flex; justify-content:space-between; font-size:12px; color:rgba(255,255,255,.35); }
-
-/* Responsive */
-@media (max-width:900px) {
-  section { padding:72px 24px; }
-  nav { padding:20px 24px; }
-  .nav-links { display:none; }
-  .about-grid { grid-template-columns:1fr; }
-  .resa-inner { grid-template-columns:1fr; }
-  .properties-grid { grid-template-columns:1fr; }
-  .tarifs-grid { grid-template-columns:1fr 1fr; }
-  .footer-grid { grid-template-columns:1fr; gap:32px; }
+.carousel-section { margin-bottom: 60px; }
+.carousel-title { font-size: 28px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--or); display: inline-block; color:#000000; }
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
 }
-@media (max-width:600px) {
-  .tarifs-grid { grid-template-columns:1fr; }
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background: linear-gradient(135deg, #c4d8d8, #8ab8b8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  color: white;
+}
+.carousel-slide span {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.6);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.3s;
+  z-index: 10;
+}
+.carousel-btn:hover { background: var(--or); color: var(--nuit); }
+.carousel-btn.prev { left: 16px; }
+.carousel-btn.next { right: 16px; }
+.carousel-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 10;
+}
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.carousel-dot.active { background: var(--or); width: 24px; border-radius: 5px; }
+
+.formules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+.formule-card {
+  background: var(--blanc);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s;
+}
+.formule-card:hover { transform: translateY(-5px); }
+.formule-card.featured { border: 2px solid var(--or); position: relative; }
+.featured-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--or);
+  color: var(--nuit);
+  padding: 6px 20px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .2em;
+}
+.formule-content { padding: 28px; }
+.formule-title { font-size: 24px; font-weight: 600; color: #000000; }
+.formule-price { font-size: 32px; font-weight: 700; color: var(--eau); margin: 15px 0; }
+.formule-btn {
+  background: var(--eau);
+  color: white;
+  padding: 12px;
+  border-radius: 40px;
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+}
+.formule-btn:hover { background: var(--eau-clair); }
+
+.date-picker-wrapper {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.calendar-box {
+  flex: 1;
+  min-width: 280px;
+  background: var(--blanc);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+.calendar-box h4 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--eau);
+  margin-bottom: 15px;
+  text-align: center;
+}
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.calendar-header button {
+  background: var(--eau-pale);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--eau);
+}
+.calendar-header button:hover { background: var(--eau); color: white; }
+.calendar-header span { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; color: #000000; }
+.calendar-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; margin-bottom: 10px; }
+.calendar-weekdays div { font-size: 11px; font-weight: 600; color: #000000; text-transform: uppercase; padding: 8px 0; }
+.calendar-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all .2s;
+  color: #000000;
+}
+.cal-day:hover:not(.disabled):not(.other-month) { background: var(--eau-pale); color: var(--eau); }
+.cal-day.selected { background: var(--eau); color: white; }
+.cal-day.in-range { background: var(--or-pale); border-radius: 0; }
+.cal-day.disabled { opacity: 0.35; cursor: not-allowed; pointer-events: none; }
+.cal-day.other-month { opacity: 0.3; cursor: default; pointer-events: none; }
+.flexible-hours {
+  background: var(--or-pale);
+  padding: 14px 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 20px 0;
+  font-weight: 500;
+  color: #000000;
 }
 
-.fade-up { opacity:0; transform:translateY(32px); transition:opacity .75s ease, transform .75s ease; }
-.fade-up.visible { opacity:1; transform:none; }
+.reservation { background: var(--sable); }
+.resa-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; }
+.contact-block { background: var(--blanc); padding: 28px; border-radius: 16px; margin-top: 32px; border-left: 3px solid var(--eau); }
+.contact-line { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; color: #000000; }
+.contact-line a { color: var(--eau); text-decoration: none; }
+.resa-form-wrap { background: var(--blanc); padding: 40px; border-radius: 20px; }
+.progress { display: flex; margin-bottom: 32px; gap: 8px; }
+.p-step { flex: 1; text-align: center; }
+.p-dot { width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--rule); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: #000000; }
+.p-dot.active { border-color: var(--eau); color: var(--eau); }
+.p-dot.done { background: var(--eau); border-color: var(--eau); color: white; }
+.p-label { font-size: 9px; letter-spacing: .2em; color: #000000; }
+.p-label.active { color: var(--eau); font-weight: 600; }
+.p-line { flex: 1; height: 2px; background: var(--rule); margin-top: 16px; }
+.p-line.done { background: var(--eau); }
+.step { display: none; }
+.step.active { display: block; }
+.persons-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.form-input, .form-textarea { width: 100%; padding: 12px; border: 2px solid var(--rule); border-radius: 12px; font-family: inherit; color: #000000; }
+.form-input:focus, .form-textarea:focus { border-color: var(--eau); outline: none; }
+.recap-box { background: var(--eau-pale); border-radius: 16px; padding: 16px; margin-bottom: 20px; }
+.recap-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--rule); color: #000000; }
+.recap-highlight { background: var(--or-pale); padding: 12px; text-align: center; border-radius: 12px; margin-top: 12px; }
+.step-btn { width: 100%; padding: 16px; background: var(--eau); color: white; font-weight: 700; letter-spacing: .2em; border: none; border-radius: 40px; cursor: pointer; }
+.step-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.back-btn { background: none; border: none; color: #000000; cursor: pointer; margin-bottom: 16px; font-size: 12px; }
+.form-err { color: var(--danger); font-size: 12px; margin-top: 8px; display: none; }
+.no-pets { background: #f9e6e4; padding: 12px; border-radius: 12px; text-align: center; margin-bottom: 16px; color: #000000; }
+
+.map-activities { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+.google-map { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); }
+.google-map iframe { width: 100%; height: 400px; border: 0; }
+.activities-list { background: var(--blanc); border-radius: 20px; padding: 28px; box-shadow: var(--shadow); }
+.activities-list h3 { font-size: 22px; margin-bottom: 20px; color: #000000; }
+.activity-item { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.activity-item:last-child { border-bottom: none; }
+.activity-icon { font-size: 28px; min-width: 48px; }
+.activity-text strong { display: block; color: #000000; margin-bottom: 4px; }
+.activity-text span { font-size: 13px; color: #000000; }
+
+footer {
+  background: var(--nuit);
+  padding: 60px 56px 36px;
+  margin-top: 60px;
+  color: white;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: 28px;
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 1000px) {
+  section { padding: 60px 24px; }
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .formules-grid { grid-template-columns: 1fr; }
+  .resa-inner { grid-template-columns: 1fr; }
+  .date-picker-wrapper { flex-direction: column; }
+  .map-activities { grid-template-columns: 1fr; }
+}
+.fade-up { opacity: 0; transform: translateY(30px); transition: all .7s ease; }
+.fade-up.visible { opacity: 1; transform: none; }
 </style>
 </head>
 <body>
 
 <nav id="mainNav">
-  <a href="#" class="nav-brand">
-    <span class="nav-brand-name">Gîte du Port aux Moules</span>
-    <span class="nav-brand-sub">Coulon · Marais Poitevin</span>
-  </a>
+  <a href="#" class="nav-brand-name">LES GÎTES du Port aux Moules</a>
   <ul class="nav-links">
-    <li><a href="#gite">Le Gîte</a></li>
+    <li><a href="#about">Le Gîte</a></li>
+    <li><a href="#galerie">Photos</a></li>
     <li><a href="#tarifs">Tarifs</a></li>
     <li><a href="#reservation">Réserver</a></li>
-    <li><a href="#carte">Accès</a></li>
+    <li><a href="#carte">Accès & Activités</a></li>
   </ul>
 </nav>
 
 <header class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-bg-overlay"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Venise Verte · Coulon · Deux-Sèvres</p>
-    <h1 class="hero-title">Gîte du Port<br><em>aux Moules</em></h1>
-    <p class="hero-subtitle">Une maison poitevine authentique au cœur du Marais Poitevin.<br>De 1 à 15 personnes, configurations modulables.</p>
+    <h1 class="hero-title">LES GÎTES du Port<br><em>aux Moules</em></h1>
+    <p class="hero-subtitle">Une maison poitevine authentique au cœur du Marais Poitevin.<br>De 1 à 15 personnes, modulable de 1 à 8 pièces.</p>
     <div class="hero-ctas">
       <a href="#reservation" class="btn-primary">Réserver votre séjour</a>
-      <a href="#gite" class="btn-outline">Découvrir le gîte</a>
+      <a href="#about" class="btn-outline">Découvrir les gîtes</a>
     </div>
   </div>
   <div class="hero-badges">
-    <div class="hero-badge">🛏 <strong>1 à 6</strong> chambres</div>
-    <div class="hero-badge">👥 Jusqu'à <strong>15</strong> personnes</div>
-    <div class="hero-badge">🚣 Barques à <strong>&lt;100m</strong></div>
+    <div class="hero-badge">🏠 1 à 8 pièces</div>
+    <div class="hero-badge">👥 Jusqu'à 15 personnes</div>
+    <div class="hero-badge">🚣 Barques & vélos à 100m</div>
+    <div class="hero-badge">💰 100€ à 400€ / nuit</div>
   </div>
 </header>
 
-<section class="about" id="gite">
+<section class="about" id="about">
   <div class="section-inner">
     <div class="about-grid">
-      <div class="about-photos fade-up">
-        <div class="photo-placeholder photo-tall">🏠 Photo extérieur</div>
-        <div class="photo-placeholder">🛋️ Salon</div>
-        <div class="photo-placeholder">🛏️ Chambre</div>
-        <div class="about-badge"><div class="about-badge-num">15</div><div class="about-badge-txt">personnes max</div></div>
+      <div class="about-text fade-up">
+        <div class="section-tag"><span class="eyebrow">LES GÎTES</span></div>
+        <h2 class="section-title">L'authenticité<br><em>au fil de l'eau</em></h2>
+        <p>Les Gîtes du Port aux Moules sont idéalement situés au cœur de la Venise Verte et du bourg de Coulon.</p>
+        <p>Vous profiterez du calme des canaux du Marais Poitevin tout en appréciant les animations, les commerces, les restaurants et l'office de tourisme.</p>
+        <p>Notre maison poitevine allie le charme de l'authentique et le confort moderne. Elle permet d'accueillir chaleureusement 1 à 15 personnes car elle est modulable pour 1 à 8 pièces, avec 4 toilettes complètes.</p>
+        <div class="features-list">
+          <div class="feature-item"><div class="feature-icon">🏠</div><div>1 à 8 pièces modulables</div></div>
+          <div class="feature-item"><div class="feature-icon">🚿</div><div>4 toilettes complètes</div></div>
+          <div class="feature-item"><div class="feature-icon">🔥</div><div>Barbecue électrique & Plancha</div></div>
+          <div class="feature-item"><div class="feature-icon">🏡</div><div>Grand préau couvert</div></div>
+          <div class="feature-item"><div class="feature-icon">🔒</div><div>Jardin sécurisé (grille haute fermant à clef)</div></div>
+          <div class="feature-item"><div class="feature-icon">🅿️</div><div>Parking gratuit voisin</div></div>
+        </div>
       </div>
-      <div>
-        <div class="section-header fade-up">
-          <div class="section-tag"><span class="eyebrow">Le Gîte</span></div>
-          <h2 class="section-title">L'authenticité<br><em>au fil de l'eau</em></h2>
+      <div class="about-info fade-up delay-1">
+        <div class="about-badge">
+          <div class="big-number">15</div>
+          <div>personnes max</div>
         </div>
-        <p class="about-desc fade-up">Idéalement situé au cœur de la Venise Verte, le Gîte du Port aux Moules vous offre le calme des canaux du Marais Poitevin tout en restant à quelques minutes des commerces et restaurants.</p>
-        
-        <!-- Bloc information chiens interdits -->
-        <div class="no-pets-banner fade-up">
-          <span>🚫</span>
-          <p>Animaux non acceptés — Merci de votre compréhension</p>
+        <div class="about-badge" style="margin-top:20px; background:var(--or); color:var(--nuit);">
+          <div class="big-number">100€ → 400€</div>
+          <div>/ nuit selon configuration</div>
         </div>
-
-        <p class="about-desc fade-up">Notre propriété se compose de deux bâtiments distincts (10 et 12 rue du Port aux Moules), communicants par le 1er étage, offrant une flexibilité totale pour accueillir de 1 à 15 personnes.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Présentation détaillée des deux propriétés -->
-<section class="properties-showcase">
+<section class="galerie" id="galerie">
   <div class="section-inner">
-    <div class="section-header centered fade-up">
-      <div class="section-tag" style="justify-content:center;"><span class="eyebrow">Nos Hébergements</span></div>
-      <h2 class="section-title">Deux propriétés<br><em>modulables à souhait</em></h2>
+    <div class="section-header fade-up">
+      <div class="section-tag" style="justify-content:center;"><span class="eyebrow">Galerie</span></div>
+      <h2 class="section-title">Les hébergements<br><em>en images</em></h2>
     </div>
-    <div class="properties-grid fade-up">
-      <!-- 10 rue -->
-      <div class="property-card">
-        <div class="property-header">
-          <h3>Le 10 · Maison principale</h3>
-          <div class="property-address">10 Rue du Port aux Moules</div>
-        </div>
-        <div class="property-content">
-          <div class="property-features">
-            <span class="property-feature">🏠 5 pièces</span>
-            <span class="property-feature">🛏️ 3 chambres</span>
-            <span class="property-feature">🚿 2 douches + 1 baignoire</span>
-            <span class="property-feature">🚽 3 WC</span>
-            <span class="property-feature">🔥 Barbecue</span>
-            <span class="property-feature">🌿 Jardin</span>
-          </div>
-          <div class="property-price">250€ <span>/ nuit</span></div>
-          <p class="property-note">Maison complète avec jardin, barbecue et tout le confort pour 6 à 8 personnes.</p>
-        </div>
-      </div>
 
-      <!-- 12 rue -->
-      <div class="property-card">
-        <div class="property-header">
-          <h3>Le 12 · Studio & étage</h3>
-          <div class="property-address">12 Rue du Port aux Moules</div>
-        </div>
-        <div class="property-content">
-          <div class="property-features">
-            <span class="property-feature">🏠 Rez-de-chaussée studio</span>
-            <span class="property-feature">🏠 1er étage communicant</span>
-            <span class="property-feature">🍳 Cuisine équipée</span>
-            <span class="property-feature">🚿 Douche + WC</span>
-          </div>
-          <div class="config-options">
-            <div class="config-option" data-config="studio" data-price="100" data-label="Studio seul">
-              <div class="config-option-info"><h4>Studio seul (rez-de-chaussée)</h4><p>1 pièce · cuisine · douche · WC</p></div>
-              <div class="config-option-price">100€<small>/nuit</small></div>
-            </div>
-            <div class="config-option" data-config="studio_etage" data-price="150" data-label="Studio + 1er étage">
-              <div class="config-option-info"><h4>Studio + 1er étage</h4><p>Config complète du 12 · jusqu'à 4 personnes</p></div>
-              <div class="config-option-price">150€<small>/nuit</small></div>
-            </div>
-            <div class="config-option" data-config="tout" data-price="400" data-label="Propriété complète (10 + 12)">
-              <div class="config-option-info"><h4>Propriété complète</h4><p>10 + 12 · jusqu'à 15 personnes · les deux maisons</p></div>
-              <div class="config-option-price">400€<small>/nuit</small></div>
-            </div>
-          </div>
-          <p class="property-note">⚠️ Les deux propriétés communiquent par le 1er étage. Possibilité de louer séparément ou ensemble.</p>
-        </div>
+    <div class="carousel-section fade-up">
+      <h3 class="carousel-title">🏠 MAISON 10 - 5 pièces, 3 chambres, jardin</h3>
+      <div class="carousel-container" id="carousel-10">
+        <button class="carousel-btn prev" onclick="changeSlide('carousel-10', -1)">‹</button>
+        <div class="carousel-track" id="track-10"></div>
+        <button class="carousel-btn next" onclick="changeSlide('carousel-10', 1)">›</button>
+        <div class="carousel-dots" id="dots-10"></div>
+      </div>
+    </div>
+
+    <div class="carousel-section fade-up">
+      <h3 class="carousel-title">🏢 STUDIO 12 - Rez-de-chaussée (1 pièce, cuisine, douche, WC)</h3>
+      <div class="carousel-container" id="carousel-studio">
+        <button class="carousel-btn prev" onclick="changeSlide('carousel-studio', -1)">‹</button>
+        <div class="carousel-track" id="track-studio"></div>
+        <button class="carousel-btn next" onclick="changeSlide('carousel-studio', 1)">›</button>
+        <div class="carousel-dots" id="dots-studio"></div>
+      </div>
+    </div>
+
+    <div class="carousel-section fade-up">
+      <h3 class="carousel-title">🏢 12 COMPLET - Studio rez + 1er étage (3 pièces, 2 chambres à l'étage)</h3>
+      <div class="carousel-container" id="carousel-12complet">
+        <button class="carousel-btn prev" onclick="changeSlide('carousel-12complet', -1)">‹</button>
+        <div class="carousel-track" id="track-12complet"></div>
+        <button class="carousel-btn next" onclick="changeSlide('carousel-12complet', 1)">›</button>
+        <div class="carousel-dots" id="dots-12complet"></div>
+      </div>
+    </div>
+
+    <div class="carousel-section fade-up">
+      <h3 class="carousel-title">🏠+🏢 PROPRIÉTÉ COMPLÈTE - Maison 10 + Maison 12 (jusqu'à 15 pers.)</h3>
+      <div class="carousel-container" id="carousel-complete">
+        <button class="carousel-btn prev" onclick="changeSlide('carousel-complete', -1)">‹</button>
+        <div class="carousel-track" id="track-complete"></div>
+        <button class="carousel-btn next" onclick="changeSlide('carousel-complete', 1)">›</button>
+        <div class="carousel-dots" id="dots-complete"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Grille tarifs dégressive -->
 <section class="tarifs" id="tarifs">
   <div class="section-inner">
-    <div class="section-header centered fade-up">
-      <div class="section-tag" style="justify-content:center;"><span class="eyebrow">Tarifs dégressifs</span></div>
-      <h2 class="section-title">Nos <em>offres</em> longue durée</h2>
+    <div class="section-header fade-up">
+      <div class="section-tag" style="justify-content:center;"><span class="eyebrow">Tarifs</span></div>
+      <h2 class="section-title">Nos formules<br><em>de location</em></h2>
+      <div style="margin-top:20px;">📶 Fibre & WiFi inclus · Prix dégressifs selon durée</div>
     </div>
-    <div class="tarifs-grid fade-up">
-      <div class="tarif-card"><h4>Nuitée</h4><div class="price">100-400€<span>/nuit</span></div><ul><li>Tarif selon configuration</li></ul></div>
-      <div class="tarif-card"><h4>Semaine (7 nuits)</h4><div class="price">-10%</div><ul><li>Réduction sur le total</li></ul></div>
-      <div class="tarif-card"><h4>2 semaines (14 nuits)</h4><div class="price">-20%</div><ul><li>Réduction sur le total</li></ul></div>
-      <div class="tarif-card"><h4>Mois (28+ nuits)</h4><div class="price">-30%</div><ul><li>Tarif mensuel</li></ul></div>
+    <div class="formules-grid fade-up">
+      <div class="formule-card">
+        <div class="formule-content">
+          <div class="formule-title">🏢 Studio 12 (rez)</div>
+          <div class="formule-address" style="font-size:12px; color:var(--gris); margin-bottom:5px;">📍 12 Rue du Port aux Moules</div>
+          <div class="formule-price">100€ <span>/ nuit</span></div>
+          <ul style="list-style:none; margin:15px 0; color:#000000;"><li>👥 1 à 2 personnes</li><li>🏠 1 pièce · Grand canapé convertible</li><li>🍳 Cuisine · Douche · WC</li></ul>
+          <button class="formule-btn" onclick="preselectConfig('studio')">Réserver</button>
+        </div>
+      </div>
+
+      <div class="formule-card">
+        <div class="formule-content">
+          <div class="formule-title">🏢 12 Complet</div>
+          <div class="formule-address" style="font-size:12px; color:var(--gris); margin-bottom:5px;">📍 12 Rue du Port aux Moules</div>
+          <div class="formule-price">150€ <span>/ nuit</span></div>
+          <ul style="list-style:none; margin:15px 0; color:#000000;"><li>👥 3 à 4 personnes</li><li>🏠 3 pièces · 2 chambres à l'étage</li><li>🍳 Cuisine · Douche · WC</li></ul>
+          <button class="formule-btn" onclick="preselectConfig('complet12')">Réserver</button>
+        </div>
+      </div>
+
+      <div class="formule-card">
+        <div class="formule-content">
+          <div class="formule-title">🏠 Maison 10</div>
+          <div class="formule-address" style="font-size:12px; color:var(--gris); margin-bottom:5px;">📍 10 Rue du Port aux Moules</div>
+          <div class="formule-price">250€ <span>/ nuit</span></div>
+          <ul style="list-style:none; margin:15px 0; color:#000000;"><li>👥 6 à 8 personnes</li><li>🏠 5 pièces · 3 chambres</li><li>🌿 Jardin · Barbecue · Plancha</li></ul>
+          <button class="formule-btn" onclick="preselectConfig('maison10')">Réserver</button>
+        </div>
+      </div>
+
+      <div class="formule-card featured" style="grid-column: span 3; margin-top: 20px;">
+        <div class="featured-badge">⭐ RECOMMANDÉ ⭐</div>
+        <div class="formule-content" style="text-align:center;">
+          <div class="formule-title">Propriété complète — 10 + 12</div>
+          <div class="formule-address" style="font-size:12px; color:var(--gris);">📍 10-12 Rue du Port aux Moules</div>
+          <div class="formule-price">400€ <span>/ nuit</span></div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; margin-top: 20px;">
+            <ul style="list-style:none; color:#000000;"><li>🏠 Maison 10 : 5 pièces · 3 chambres</li><li>🏢 Maison 12 : 3 pièces · 2 chambres</li><li>🛏️ Total : 8 pièces · 5 chambres</li></ul>
+            <ul style="list-style:none; color:#000000;"><li>👥 Jusqu'à 15 personnes</li><li>🚿 4 WC · 2 douches + 1 bain</li><li>🌿 Grand jardin · Barbecue · Plancha</li><li>🚪 Communication par le 1er étage</li></ul>
+          </div>
+          <button class="formule-btn" onclick="preselectConfig('complete')" style="background: var(--or); color: var(--nuit); margin-top: 20px;">Réserver la propriété complète →</button>
+        </div>
+      </div>
     </div>
-    <div class="discount-note fade-up">
-      📉 Réduction dégressive automatique : 10% pour 7+ nuits · 20% pour 14+ nuits · 30% pour 28+ nuits consécutives
+    <div class="fade-up" style="margin-top:40px; text-align:center; background:var(--or-pale); padding:20px; border-radius:16px;">
+      <p>📉 Réduction dégressive : -10% (7+ nuits) · -20% (14+ nuits) · -30% (21+ nuits) · -40% (28+ nuits)</p>
+      <p style="margin-top:10px;">🚫 Animaux non acceptés · 💰 Acompte après appel pour confirmer</p>
     </div>
   </div>
 </section>
 
-<!-- Réservation -->
 <section class="reservation" id="reservation">
   <div class="section-inner">
     <div class="resa-inner">
-      <div>
-        <div class="section-header fade-up">
-          <div class="section-tag"><span class="eyebrow">Réservation</span></div>
-          <h2 class="section-title">Votre séjour<br><em>dans le Marais</em></h2>
-        </div>
-        <div class="contact-block fade-up">
-          <h4>Contact direct</h4>
+      <div class="fade-up">
+        <div class="eyebrow">Réservation</div>
+        <h2 class="section-title">Votre séjour<br><em>dans le Marais</em></h2>
+        <div class="contact-block">
+          <h4 style="color:var(--eau); margin-bottom:16px;">Contact direct</h4>
           <div class="contact-line">📞 <a href="tel:+33668492533">06 68 49 25 33</a></div>
           <div class="contact-line">📍 10-12 Rue du Port aux Moules, 79510 Coulon</div>
-          <div class="contact-line">🕒 Arrivée 15h · Départ 11h</div>
+          <div class="contact-line">🕒 Heure d'arrivée et départ flexibles (à convenir ensemble)</div>
         </div>
+        <div class="no-pets">🚫 Animaux non acceptés</div>
       </div>
 
       <div class="resa-form-wrap fade-up">
@@ -447,62 +570,62 @@ footer { background:var(--nuit); padding:60px 56px 36px; }
             <div class="p-step"><div class="p-dot" id="dot4">4</div><div class="p-label" id="lbl4">Confirmation</div></div>
           </div>
 
-          <!-- Étape 1: Dates -->
           <div class="step active" id="step1">
             <h3 class="step-title">Vos dates de <em>séjour</em></h3>
-            <div class="date-row">
-              <div class="date-field"><label>📅 Arrivée</label><div class="date-field-inner" onclick="toggleCal('arr')"><div class="date-display placeholder" id="arrDateDisplay">Choisir une date</div><div class="mini-cal" id="arrCal"></div></div>
-              <select class="time-select" id="arrTime"><option value="15:00" selected>15h00</option><option value="16:00">16h00</option><option value="17:00">17h00</option></select></div>
-              <div class="date-field"><label>📅 Départ</label><div class="date-field-inner" onclick="toggleCal('dep')"><div class="date-display placeholder" id="depDateDisplay">Choisir une date</div><div class="mini-cal" id="depCal"></div></div>
-              <select class="time-select" id="depTime"><option value="10:00">10h00</option><option value="11:00" selected>11h00</option></select></div>
+            <div class="date-picker-wrapper">
+              <div class="calendar-box"><h4>📅 Date d'arrivée</h4><div id="calendar-arr"></div></div>
+              <div class="calendar-box"><h4>📅 Date de départ</h4><div id="calendar-dep"></div></div>
             </div>
-            <div class="nights-display" id="nightsDisplay" style="display:none;"></div>
+            <div class="nights-display" id="nightsDisplay" style="display:none; background:var(--or-pale); padding:12px; border-radius:12px; text-align:center; margin-bottom:16px;"></div>
+            <div class="flexible-hours">🕒 Heure d'arrivée et départ flexibles — à convenir ensemble selon vos besoins</div>
             <p class="form-err" id="err1">Veuillez sélectionner vos dates</p>
-            <button class="step-btn" id="btn1" onclick="goStep(2)" disabled>Choisir ma configuration →</button>
+            <button class="step-btn" id="btn1" disabled onclick="goToStep(2)">Choisir ma configuration →</button>
           </div>
 
-          <!-- Étape 2: Configuration -->
           <div class="step" id="step2">
-            <button class="back-btn" onclick="goStep(1)">← Retour</button>
+            <button class="back-btn" onclick="goToStep(1)">← Retour</button>
             <h3 class="step-title">Votre <em>configuration</em></h3>
-            <div class="config-options" id="configOptionsList">
-              <div class="config-option" data-val="10_only" data-label="Maison 10 (5 pièces)" data-price="250" data-cap="6-8 pers." onclick="selectConfig(this)">
-                <div class="config-option-info"><h4>Maison 10 · 5 pièces</h4><p>Jardin, barbecue, 3 WC, 2 douches, 1 bain</p></div><div class="config-option-price">250€<small>/nuit</small></div>
+            <div class="config-list" style="display:flex; flex-direction:column; gap:12px;">
+              <div class="config-option" data-val="studio" data-label="Studio 12 (rez) - 1 pièce, 2 pers." data-price="100" style="padding:16px; border:2px solid var(--rule); border-radius:12px; cursor:pointer;">
+                <div><strong>🏢 Studio 12 (rez)</strong> — 12 Rue du Port aux Moules, 1 pièce, 1-2 pers.</div>
+                <div style="color:var(--eau); font-weight:700;">100€/nuit</div>
               </div>
-              <div class="config-option" data-val="12_studio" data-label="Studio 12 (rez-de-chaussée)" data-price="100" data-cap="1-2 pers." onclick="selectConfig(this)">
-                <div class="config-option-info"><h4>Studio 12 · rez-de-chaussée</h4><p>Cuisine, douche, WC</p></div><div class="config-option-price">100€<small>/nuit</small></div>
+              <div class="config-option" data-val="complet12" data-label="12 Complet (studio+étage) - 3 pièces, 2 chambres" data-price="150" style="padding:16px; border:2px solid var(--rule); border-radius:12px; cursor:pointer;">
+                <div><strong>🏢 12 Complet</strong> — 12 Rue du Port aux Moules, 3 pièces, 2 chambres à l'étage, 3-4 pers.</div>
+                <div style="color:var(--eau); font-weight:700;">150€/nuit</div>
               </div>
-              <div class="config-option" data-val="12_complet" data-label="12 complet (studio + 1er étage)" data-price="150" data-cap="3-4 pers." onclick="selectConfig(this)">
-                <div class="config-option-info"><h4>12 complet · studio + 1er étage</h4><p>Espace supplémentaire</p></div><div class="config-option-price">150€<small>/nuit</small></div>
+              <div class="config-option" data-val="maison10" data-label="Maison 10 - 5 pièces, 3 chambres" data-price="250" style="padding:16px; border:2px solid var(--rule); border-radius:12px; cursor:pointer;">
+                <div><strong>🏠 Maison 10</strong> — 10 Rue du Port aux Moules, 5 pièces, 3 chambres, 6-8 pers.</div>
+                <div style="color:var(--eau); font-weight:700;">250€/nuit</div>
               </div>
-              <div class="config-option" data-val="tout" data-label="Propriété complète (10 + 12)" data-price="400" data-cap="13-15 pers." onclick="selectConfig(this)">
-                <div class="config-option-info"><h4>Propriété complète · 10 + 12</h4><p>Jusqu'à 15 personnes, les deux maisons</p></div><div class="config-option-price">400€<small>/nuit</small></div>
+              <div class="config-option" data-val="complete" data-label="Propriété complète 10+12" data-price="400" style="padding:16px; border:2px solid var(--or); background:var(--or-pale); border-radius:12px; cursor:pointer;">
+                <div><strong>⭐ PROPRIÉTÉ COMPLÈTE — 10 + 12 ⭐</strong><br>Les deux maisons, jusqu'à 15 personnes</div>
+                <div style="color:var(--eau); font-size:20px; font-weight:700;">400€/nuit</div>
               </div>
             </div>
-            <div class="persons-row"><div><label class="form-label">👨 Adultes *</label><input type="number" class="form-input" id="adults" min="1" max="15" value="2"></div>
+            <div class="persons-row"><div><label class="form-label">👨 Adultes</label><input type="number" class="form-input" id="adults" min="1" max="15" value="2"></div>
             <div><label class="form-label">👶 Enfants (-12 ans)</label><input type="number" class="form-input" id="children" min="0" max="13" value="0"></div></div>
             <p class="form-err" id="err2">Veuillez sélectionner une configuration</p>
-            <button class="step-btn" id="btn2" onclick="goStep(3)" disabled>Mes coordonnées →</button>
+            <button class="step-btn" id="btn2" disabled onclick="goToStep(3)">Mes coordonnées →</button>
           </div>
 
-          <!-- Étape 3: Coordonnées -->
           <div class="step" id="step3">
-            <button class="back-btn" onclick="goStep(2)">← Retour</button>
+            <button class="back-btn" onclick="goToStep(2)">← Retour</button>
             <h3 class="step-title">Vos <em>coordonnées</em></h3>
             <div class="recap-box" id="recap3"></div>
-            <div class="form-2col"><div class="form-row"><label class="form-label">Prénom *</label><input class="form-input" id="fPrenom"></div>
-            <div class="form-row"><label class="form-label">Nom *</label><input class="form-input" id="fNom"></div></div>
-            <div class="form-row"><label class="form-label">Email *</label><input class="form-input" id="fEmail" type="email"></div>
-            <div class="form-row"><label class="form-label">Téléphone *</label><input class="form-input" id="fTel" type="tel"></div>
-            <div class="form-row"><label class="form-label">Message</label><textarea class="form-textarea" id="fMessage"></textarea></div>
-            <div class="form-check"><input type="checkbox" id="fConsent"><label>J'accepte le traitement de mes données pour la réservation</label></div>
-            <div class="acompte-notice">💰 Acompte demandé après le premier appel pour confirmer votre réservation</div>
-            <p class="form-err" id="err3">Veuillez remplir tous les champs obligatoires</p>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;"><div><label class="form-label">Prénom *</label><input class="form-input" id="fPrenom"></div><div><label class="form-label">Nom *</label><input class="form-input" id="fNom"></div></div>
+            <div><label class="form-label">Email *</label><input class="form-input" id="fEmail" type="email"></div>
+            <div><label class="form-label">Téléphone *</label><input class="form-input" id="fTel" type="tel"></div>
+            <div><label class="form-label">Message</label><textarea class="form-textarea" id="fMessage"></textarea></div>
+            <div style="display:flex; gap:10px; margin:16px 0;"><input type="checkbox" id="fConsent"><label>J'accepte le traitement de mes données</label></div>
+            <div style="background:var(--eau-pale); padding:12px; border-radius:12px; text-align:center; margin-bottom:16px;">💰 Acompte demandé après le premier appel pour confirmer votre réservation</div>
+            <p class="form-err" id="err3">Veuillez remplir tous les champs</p>
             <button class="step-btn" id="btn3" onclick="submitResa()">Envoyer ma demande →</button>
           </div>
 
-          <!-- Étape 4: Confirmation -->
-          <div class="step" id="step4"><div class="success-block"><div style="font-size:48px;">✅</div><h3>Demande envoyée !</h3><p>Nous vous recontacterons sous 24h pour confirmer votre réservation et vous indiquer la procédure d'acompte.</p><div class="recap-box" id="recap4"></div><a href="#" class="btn-primary" onclick="location.reload();return false;">← Retour</a></div></div>
+          <div class="step" id="step4">
+            <div style="text-align:center; padding:20px;"><div style="font-size:48px;">✅</div><h3>Demande envoyée !</h3><p>Nous vous recontacterons sous 24h pour confirmer votre réservation</p><div class="recap-box" id="recap4" style="margin-top:24px;"></div><button class="btn-primary" onclick="location.reload();" style="margin-top:20px;">← Retour</button></div>
+          </div>
         </div>
       </div>
     </div>
@@ -511,124 +634,211 @@ footer { background:var(--nuit); padding:60px 56px 36px; }
 
 <section class="carte" id="carte">
   <div class="section-inner">
-    <div class="section-header centered fade-up">
+    <div class="section-header fade-up">
       <div class="section-tag" style="justify-content:center;"><span class="eyebrow">Localisation</span></div>
-      <h2 class="section-title">Comment nous <em>trouver</em></h2>
+      <h2 class="section-title">Comment nous <em>trouver</em><br>et activités autour</h2>
     </div>
-    <div class="carte-inner"><div><div class="carte-adresse"><strong>Gîtes du Port aux Moules</strong><br>10-12 Rue du Port aux Moules, 79510 Coulon</div></div><div id="map" style="height:400px;"></div></div>
+    <div class="map-activities fade-up">
+      <div class="google-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d562.7727004165993!2d-0.5884991430346778!3d46.32064273922163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480729004e7be7d3%3A0xfc45ef2685d3c169!2s12%20Rue%20du%20Port%20aux%20Moules%2C%2079510%20Coulon!5e0!3m2!1sfr!2sfr!4v1780913898073!5m2!1sfr!2sfr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="activities-list">
+        <h3>🏞️ Activités à proximité</h3>
+        <div class="activity-item"><div class="activity-icon">🚣</div><div class="activity-text"><strong>Location de barques</strong><span>À moins de 100m — explorez les canaux du Marais Poitevin</span></div></div>
+        <div class="activity-item"><div class="activity-icon">🚲</div><div class="activity-text"><strong>Location de vélos</strong><span>À moins de 100m — balades autour des marais et de la Venise Verte</span></div></div>
+        <div class="activity-item"><div class="activity-icon">🍽️</div><div class="activity-text"><strong>Restaurants & commerces</strong><span>À quelques minutes à pied dans le bourg de Coulon</span></div></div>
+        <div class="activity-item"><div class="activity-icon">ℹ️</div><div class="activity-text"><strong>Office de Tourisme</strong><span>Conseils et découverte du Marais Poitevin</span></div></div>
+        <div class="activity-item"><div class="activity-icon">🚶</div><div class="activity-text"><strong>Randonnées pédestres</strong><span>Sentiers balisés au cœur de la nature préservée</span></div></div>
+        <div class="activity-item"><div class="activity-icon">⛪</div><div class="activity-text"><strong>Église Romane classée</strong><span>Patrimoine historique de Coulon à visiter</span></div></div>
+      </div>
+    </div>
+    <div class="fade-up" style="margin-top:30px; text-align:center; padding:20px; background:var(--blanc); border-radius:16px;">
+      <p><strong>Adresse :</strong> 10-12 Rue du Port aux Moules, 79510 COULON</p>
+      <p><a href="https://maps.app.goo.gl/P1m1bareVGBVMgEo7" target="_blank" style="color:var(--eau);">📍 Voir sur Google Maps →</a></p>
+    </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-grid">
-    <div><div class="footer-brand-name">Gîtes du Port aux Moules</div><div class="footer-desc">Coulon · Marais Poitevin · Venise Verte<br>📍 10-12 Rue du Port aux Moules, 79510 Coulon</div></div>
-    <div><h4>Navigation</h4><ul class="footer-links"><li><a href="#gite">Le Gîte</a></li><li><a href="#tarifs">Tarifs</a></li><li><a href="#reservation">Réserver</a></li></ul></div>
-    <div><h4>Contact</h4><ul class="footer-links"><li><a href="tel:+33668492533">📞 06 68 49 25 33</a></li><li><a href="#carte">📍 Voir la carte</a></li></ul></div>
+  <div>LES GÎTES du Port aux Moules · Coulon · Marais Poitevin · Venise Verte</div>
+  <div class="footer-bottom">
+    <span>© 2025 · Animaux non acceptés · Prix fixes</span>
+    <span>📶 Fibre/WiFi inclus</span>
+    <span>📍 10-12 Rue du Port aux Moules, 79510 Coulon</span>
   </div>
-  <div class="footer-bottom"><span>© 2025 Gîtes du Port aux Moules · Animaux non acceptés</span><div class="footer-legal"><a href="#">Mentions légales</a></div></div>
 </footer>
 
 <script>
-// Navigation scroll
-const navEl = document.getElementById('mainNav');
-window.addEventListener('scroll', () => navEl.classList.toggle('scrolled', window.scrollY > 60));
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
 
-// Fade animations
 const faders = document.querySelectorAll('.fade-up');
-const obs = new IntersectionObserver(e => e.forEach(e => e.isIntersecting && e.target.classList.add('visible')), { threshold: .1 });
-faders.forEach(f => obs.observe(f));
+const observer = new IntersectionObserver(e => e.forEach(e => e.isIntersecting && e.target.classList.add('visible')), { threshold: .1 });
+faders.forEach(f => observer.observe(f));
 
-// ========== SYSTÈME RÉSERVATION ==========
-const state = { arrDate: null, depDate: null, config: null, configLabel: null, configPrice: 0, nights: 0, adults: 2, children: 0 };
-const MOIS = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const carouselImages = {
+  'carousel-10': ['🏠 Façade Maison 10', '🛋️ Salon spacieux', '🛏️ Chambre 1', '🛏️ Chambre 2', '🚿 Salle de bain', '🌿 Jardin Maison 10'],
+  'carousel-studio': ['🏢 Entrée Studio 12', '🛋️ Grand canapé convertible', '🍳 Kitchenette', '🚿 Douche', '🚽 WC'],
+  'carousel-12complet': ['🏢 Entrée 12', '🛋️ Salon rez', '🍳 Cuisine', '🪜 Escalier vers étage', '🛏️ Chambre 1 étage', '🛏️ Chambre 2 étage', '🚿 Salle d\'eau'],
+  'carousel-complete': ['🏠+🏢 Vue ensemble 10+12', '🌿 Grand jardin', '🔥 Barbecue & Plancha', '🏡 Préau couvert', '🛋️ Salon Maison 10', '🛏️ Grande chambre', '🚪 Communication 1er étage']
+};
 
-function formatDate(d) { if(!d) return ''; return `${d.getDate()} ${MOIS[d.getMonth()]} ${d.getFullYear()}`; }
+let carouselStates = {};
 
-// Calendriers simplifiés
-let calStates = { arr: { year: new Date().getFullYear(), month: new Date().getMonth() }, dep: { year: new Date().getFullYear(), month: new Date().getMonth() } };
-function buildCal(type) {
-  const cal = document.getElementById(type+'Cal'); if(!cal) return;
-  const cs = calStates[type]; const today = new Date(); today.setHours(0,0,0,0);
-  let html = `<div class="cal-head"><button class="cal-nav" onclick="shiftCal('${type}',-1)">‹</button><span class="cal-month">${MOIS[cs.month]} ${cs.year}</span><button class="cal-nav" onclick="shiftCal('${type}',1)">›</button></div><div class="cal-grid">`;
-  for(let i=0;i<7;i++) html+=`<div class="cal-dow">${['Lu','Ma','Me','Je','Ve','Sa','Di'][i]}</div>`;
-  const first = new Date(cs.year, cs.month, 1); let startDow = first.getDay()-1; if(startDow<0) startDow=6;
-  const daysInMonth = new Date(cs.year, cs.month+1, 0).getDate();
-  for(let i=0;i<startDow;i++) html+='<div class="cal-day other"></div>';
-  for(let d=1; d<=daysInMonth; d++) {
-    const date = new Date(cs.year, cs.month, d);
-    let cls = 'cal-day';
-    if(date<today) cls+=' disabled';
-    const sel = type==='arr'?state.arrDate:state.depDate;
-    if(sel && date.toDateString()===sel.toDateString()) cls+=' selected';
-    if(type==='dep' && state.arrDate && date<=state.arrDate) cls+=' disabled';
-    html+=`<div class="${cls}" onclick="pickDate('${type}',${cs.year},${cs.month},${d})">${d}</div>`;
+function initCarousel(carouselId) {
+  const track = document.getElementById(`track-${carouselId}`);
+  const dotsContainer = document.getElementById(`dots-${carouselId}`);
+  const images = carouselImages[carouselId] || [];
+  if (!track) return;
+  carouselStates[carouselId] = 0;
+  track.innerHTML = '';
+  images.forEach((label, idx) => {
+    const slide = document.createElement('div');
+    slide.className = 'carousel-slide';
+    slide.innerHTML = `<div style="text-align:center;">${label.split(' ')[0]}<br><span>${label}</span></div>`;
+    track.appendChild(slide);
+  });
+  dotsContainer.innerHTML = '';
+  images.forEach((_, idx) => {
+    const dot = document.createElement('div');
+    dot.className = 'carousel-dot' + (idx === 0 ? ' active' : '');
+    dot.onclick = () => goToSlide(carouselId, idx);
+    dotsContainer.appendChild(dot);
+  });
+  updateCarousel(carouselId);
+}
+
+function updateCarousel(carouselId) {
+  const track = document.getElementById(`track-${carouselId}`);
+  const current = carouselStates[carouselId] || 0;
+  if (track) track.style.transform = `translateX(-${current * 100}%)`;
+  const dots = document.querySelectorAll(`#dots-${carouselId} .carousel-dot`);
+  dots.forEach((dot, idx) => dot.classList.toggle('active', idx === current));
+}
+
+function changeSlide(carouselId, direction) {
+  const images = carouselImages[carouselId] || [];
+  let current = carouselStates[carouselId] || 0;
+  current += direction;
+  if (current < 0) current = images.length - 1;
+  if (current >= images.length) current = 0;
+  carouselStates[carouselId] = current;
+  updateCarousel(carouselId);
+}
+
+function goToSlide(carouselId, index) {
+  const images = carouselImages[carouselId] || [];
+  if (index >= 0 && index < images.length) {
+    carouselStates[carouselId] = index;
+    updateCarousel(carouselId);
   }
-  html+='</div>'; cal.innerHTML=html;
-}
-function shiftCal(type,dir) { calStates[type].month+=dir; if(calStates[type].month>11){calStates[type].month=0;calStates[type].year++;} if(calStates[type].month<0){calStates[type].month=11;calStates[type].year--;} buildCal(type); }
-function toggleCal(type){ const cal=document.getElementById(type+'Cal'); const other=type==='arr'?'dep':'arr'; document.getElementById(other+'Cal')?.classList.remove('open'); if(!cal.classList.contains('open')){buildCal(type);cal.classList.add('open');}else{cal.classList.remove('open');} }
-function pickDate(type,y,m,d){const date=new Date(y,m,d); if(type==='arr'){state.arrDate=date; if(state.depDate && state.depDate<=date){state.depDate=null; document.getElementById('depDateDisplay').textContent='Choisir une date'; document.getElementById('depDateDisplay').classList.add('placeholder');}}else{state.depDate=date;} const disp=document.getElementById(type+'DateDisplay'); disp.textContent=formatDate(date); disp.classList.remove('placeholder'); document.getElementById(type+'Cal').classList.remove('open'); calcNights(); checkStep1();}
-function calcNights(){ if(state.arrDate && state.depDate){ const diff=Math.round((state.depDate-state.arrDate)/(1000*60*60*24)); state.nights=diff; document.getElementById('nightsDisplay').innerHTML=`📅 ${diff} nuit(s) — du ${formatDate(state.arrDate)} au ${formatDate(state.depDate)}`; document.getElementById('nightsDisplay').style.display='block'; }else{ document.getElementById('nightsDisplay').style.display='none'; state.nights=0; } }
-function checkStep1(){ document.getElementById('btn1').disabled = !(state.arrDate && state.depDate); }
-document.addEventListener('click',e=>{ if(!e.target.closest('#arrFieldWrap')) document.getElementById('arrCal')?.classList.remove('open'); if(!e.target.closest('#depFieldWrap')) document.getElementById('depCal')?.classList.remove('open'); });
-
-function selectConfig(el){
-  document.querySelectorAll('.config-option').forEach(c=>c.classList.remove('selected'));
-  el.classList.add('selected');
-  state.config = el.dataset.val;
-  state.configLabel = el.dataset.label;
-  state.configPrice = parseInt(el.dataset.price);
-  document.getElementById('btn2').disabled = false;
 }
 
-function goStep(n){
-  if(n===2 && (!state.arrDate || !state.depDate)){ document.getElementById('err1').style.display='block'; return; } else { document.getElementById('err1').style.display='none'; }
-  if(n===3 && !state.config){ document.getElementById('err2').style.display='block'; return; } else { document.getElementById('err2').style.display='none'; }
-  if(n===3){ state.adults = parseInt(document.getElementById('adults').value)||2; state.children = parseInt(document.getElementById('children').value)||0; buildRecap3(); }
-  for(let i=1;i<=4;i++){ document.getElementById('step'+i).classList.toggle('active',i===n); const dot=document.getElementById('dot'+i); dot.classList.toggle('done',i<n); dot.classList.toggle('active',i===n); document.getElementById('lbl'+i).classList.toggle('active',i===n); if(i<n) dot.innerHTML='✓'; else if(!dot.classList.contains('done')) dot.innerHTML=i; if(i<=3) document.getElementById('pline'+i).classList.toggle('done',i<n); }
-  document.getElementById('resaApp').scrollIntoView({behavior:'smooth',block:'start'});
+initCarousel('carousel-10');
+initCarousel('carousel-studio');
+initCarousel('carousel-12complet');
+initCarousel('carousel-complete');
+
+let state = { arrDate: null, depDate: null, config: null, configLabel: null, configPrice: 0, nights: 0, adults: 2, children: 0 };
+const MOIS = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+const JOURS = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
+
+let currentMonthArr = new Date().getMonth(), currentYearArr = new Date().getFullYear();
+let currentMonthDep = new Date().getMonth(), currentYearDep = new Date().getFullYear();
+
+function formatDate(d) { if (!d) return ''; return `${d.getDate()} ${MOIS[d.getMonth()]} ${d.getFullYear()}`; }
+
+function buildCalendar(type, year, month) {
+  const today = new Date(); today.setHours(0,0,0,0);
+  const firstDayOfMonth = new Date(year, month, 1);
+  let startWeekday = firstDayOfMonth.getDay();
+  startWeekday = startWeekday === 0 ? 6 : startWeekday - 1;
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  let html = `<div class="calendar-header"><button onclick="changeMonth('${type}', -1)">‹</button><span>${MOIS[month]} ${year}</span><button onclick="changeMonth('${type}', 1)">›</button></div>
+  <div class="calendar-weekdays">${JOURS.map(j => `<div>${j}</div>`).join('')}</div><div class="calendar-days">`;
+  for (let i = 0; i < startWeekday; i++) html += `<div class="cal-day other-month"></div>`;
+  for (let d = 1; d <= daysInMonth; d++) {
+    const date = new Date(year, month, d);
+    let cls = 'cal-day';
+    if (date < today) cls += ' disabled';
+    if (type === 'arr' && state.arrDate && date.toDateString() === state.arrDate.toDateString()) cls += ' selected';
+    if (type === 'dep' && state.depDate && date.toDateString() === state.depDate.toDateString()) cls += ' selected';
+    if (state.arrDate && state.depDate && date > state.arrDate && date < state.depDate) cls += ' in-range';
+    if (type === 'dep' && state.arrDate && date <= state.arrDate) cls += ' disabled';
+    html += `<div class="${cls}" onclick="selectDate('${type}', ${year}, ${month}, ${d})">${d}</div>`;
+  }
+  html += `</div>`;
+  return html;
 }
 
-function getDiscount(){
-  if(state.nights>=28) return 0.30;
-  if(state.nights>=14) return 0.20;
-  if(state.nights>=7) return 0.10;
-  return 0;
+function changeMonth(type, delta) {
+  if (type === 'arr') { currentMonthArr += delta; if (currentMonthArr > 11) { currentMonthArr = 0; currentYearArr++; } if (currentMonthArr < 0) { currentMonthArr = 11; currentYearArr--; } document.getElementById('calendar-arr').innerHTML = buildCalendar('arr', currentYearArr, currentMonthArr);
+  } else { currentMonthDep += delta; if (currentMonthDep > 11) { currentMonthDep = 0; currentYearDep++; } if (currentMonthDep < 0) { currentMonthDep = 11; currentYearDep--; } document.getElementById('calendar-dep').innerHTML = buildCalendar('dep', currentYearDep, currentMonthDep); }
 }
 
-function buildRecap3(){
-  const discount = getDiscount();
-  let total = state.nights * state.configPrice;
-  let discountAmount = total * discount;
-  let finalTotal = total - discountAmount;
-  const arrTime = document.getElementById('arrTime').value;
-  const depTime = document.getElementById('depTime').value;
-  let html = `<div class="recap-row"><span class="recap-key">Arrivée</span><span class="recap-val">${formatDate(state.arrDate)} à ${arrTime}</span></div>
-  <div class="recap-row"><span class="recap-key">Départ</span><span class="recap-val">${formatDate(state.depDate)} à ${depTime}</span></div>
-  <div class="recap-row"><span class="recap-key">Durée</span><span class="recap-val">${state.nights} nuit(s)</span></div>
-  <div class="recap-row"><span class="recap-key">Configuration</span><span class="recap-val">${state.configLabel}</span></div>
-  <div class="recap-row"><span class="recap-key">Personnes</span><span class="recap-val">${state.adults} adulte(s) + ${state.children} enfant(s)</span></div>`;
-  if(discount>0) html+=`<div class="recap-row"><span class="recap-key">Réduction ${discount*100}%</span><span class="recap-val">-${Math.round(discountAmount)}€</span></div>`;
-  html+=`<div class="recap-highlight"><strong>${Math.round(finalTotal)} €</strong><small>total estimé</small></div>
-  <div class="recap-row" style="margin-top:8px;"><span class="recap-key">Acompte</span><span class="recap-val">30% à la réservation</span></div>`;
+function selectDate(type, year, month, day) {
+  const date = new Date(year, month, day);
+  const today = new Date(); today.setHours(0,0,0,0);
+  if (date < today) return;
+  if (type === 'arr') { state.arrDate = date; if (state.depDate && state.depDate <= date) { state.depDate = null; } document.getElementById('calendar-dep').innerHTML = buildCalendar('dep', currentYearDep, currentMonthDep);
+  } else { if (state.arrDate && date <= state.arrDate) return; state.depDate = date; }
+  document.getElementById('calendar-arr').innerHTML = buildCalendar('arr', currentYearArr, currentMonthArr);
+  document.getElementById('calendar-dep').innerHTML = buildCalendar('dep', currentYearDep, currentMonthDep);
+  calcNights(); checkStep1();
+}
+
+function calcNights() {
+  const nd = document.getElementById('nightsDisplay');
+  if (state.arrDate && state.depDate) { const diff = Math.round((state.depDate - state.arrDate) / (1000*60*60*24)); state.nights = diff; nd.innerHTML = `📅 ${diff} nuit${diff > 1 ? 's' : ''} — du ${formatDate(state.arrDate)} au ${formatDate(state.depDate)}`; nd.style.display = 'block';
+  } else { nd.style.display = 'none'; state.nights = 0; }
+}
+function checkStep1() { document.getElementById('btn1').disabled = !(state.arrDate && state.depDate); }
+
+const configOptions = document.querySelectorAll('.config-option');
+configOptions.forEach(opt => { opt.addEventListener('click', function() { configOptions.forEach(c => c.style.borderColor = 'var(--rule)'); this.style.borderColor = 'var(--eau)'; state.config = this.dataset.val; state.configLabel = this.querySelector('div:first-child')?.innerText || this.dataset.label; state.configPrice = parseInt(this.dataset.price); document.getElementById('btn2').disabled = false; }); });
+
+function preselectConfig(configType) { configOptions.forEach(opt => { if (opt.dataset.val === configType) opt.click(); }); document.getElementById('reservation').scrollIntoView({ behavior: 'smooth' }); }
+
+function goToStep(n) {
+  if (n === 2 && (!state.arrDate || !state.depDate)) { document.getElementById('err1').style.display = 'block'; return; } else { document.getElementById('err1').style.display = 'none'; }
+  if (n === 3 && !state.config) { document.getElementById('err2').style.display = 'block'; return; } else { document.getElementById('err2').style.display = 'none'; }
+  if (n === 3) { state.adults = parseInt(document.getElementById('adults').value) || 2; state.children = parseInt(document.getElementById('children').value) || 0; buildRecap3(); }
+  for (let i = 1; i <= 4; i++) {
+    document.getElementById('step' + i).classList.toggle('active', i === n);
+    const dot = document.getElementById('dot' + i); dot.classList.toggle('done', i < n); dot.classList.toggle('active', i === n);
+    document.getElementById('lbl' + i).classList.toggle('active', i === n);
+    if (i < n) dot.innerHTML = '✓'; else if (!dot.classList.contains('done')) dot.innerHTML = i;
+    if (i <= 3) document.getElementById('pline' + i).classList.toggle('done', i < n);
+  }
+  document.getElementById('resaApp').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function getDiscount() { 
+  if (state.nights >= 28) return 0.40;
+  if (state.nights >= 21) return 0.30;
+  if (state.nights >= 14) return 0.20;
+  if (state.nights >= 7) return 0.10;
+  return 0; 
+}
+
+function buildRecap3() {
+  const discount = getDiscount(); let total = state.nights * state.configPrice; let discountAmount = total * discount; let finalTotal = total - discountAmount;
+  let html = `<div class="recap-row"><span>Arrivée</span><span>${formatDate(state.arrDate)} (horaire flexible)</span></div><div class="recap-row"><span>Départ</span><span>${formatDate(state.depDate)} (horaire flexible)</span></div><div class="recap-row"><span>Durée</span><span>${state.nights} nuit(s)</span></div><div class="recap-row"><span>Configuration</span><span>${state.configLabel}</span></div><div class="recap-row"><span>Personnes</span><span>${state.adults} adulte(s) + ${state.children} enfant(s)</span></div>`;
+  if (discount > 0) html += `<div class="recap-row"><span>Réduction ${discount*100}%</span><span>-${Math.round(discountAmount)}€</span></div>`;
+  html += `<div class="recap-highlight"><strong>${Math.round(finalTotal)} €</strong><small>total estimé</small></div>`;
   document.getElementById('recap3').innerHTML = html;
 }
 
-function submitResa(){
-  const prenom=document.getElementById('fPrenom').value.trim(), nom=document.getElementById('fNom').value.trim(), email=document.getElementById('fEmail').value.trim(), tel=document.getElementById('fTel').value.trim(), consent=document.getElementById('fConsent').checked;
-  if(!prenom||!nom||!email||!tel||!consent){ document.getElementById('err3').style.display='block'; return; }
-  document.getElementById('err3').style.display='none';
-  const recapHtml = document.getElementById('recap3').innerHTML;
-  document.getElementById('recap4').innerHTML = recapHtml;
-  goStep(4);
+function submitResa() {
+  const prenom = document.getElementById('fPrenom').value.trim(), nom = document.getElementById('fNom').value.trim(), email = document.getElementById('fEmail').value.trim(), tel = document.getElementById('fTel').value.trim(), consent = document.getElementById('fConsent').checked;
+  if (!prenom || !nom || !email || !tel || !consent) { document.getElementById('err3').style.display = 'block'; return; }
+  document.getElementById('err3').style.display = 'none';
+  document.getElementById('recap4').innerHTML = document.getElementById('recap3').innerHTML;
+  goToStep(4);
 }
 
-// Carte Leaflet
-document.addEventListener('DOMContentLoaded',function(){
-  const map=L.map('map').setView([46.3264,-0.5867],15);
-  L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(map);
-  L.marker([46.3264,-0.5867]).addTo(map).bindPopup('<strong>Gîtes du Port aux Moules</strong><br>10-12 Rue du Port aux Moules');
-});
+document.getElementById('calendar-arr').innerHTML = buildCalendar('arr', currentYearArr, currentMonthArr);
+document.getElementById('calendar-dep').innerHTML = buildCalendar('dep', currentYearDep, currentMonthDep);
 </script>
 </body>
 </html>
