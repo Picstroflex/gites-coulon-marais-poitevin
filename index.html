@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <title>LES GÎTES du Port aux Moules – Location Coulon, Marais Poitevin | Venise Verte</title>
 <meta name="description" content="Location gîte de charme à Coulon, au cœur du Marais Poitevin. Maison poitevine authentique modulable de 1 à 15 personnes, 1 à 8 pièces. Accès direct canaux, barques et vélos à 100m. Réservez en ligne.">
@@ -83,13 +83,21 @@ nav.scrolled { background:rgba(26,46,46,.96); backdrop-filter:blur(12px); paddin
 .nav-cta { background:var(--or) !important; color:var(--nuit) !important; padding:10px 22px !important; border-radius:2px; }
 
 .hero { min-height:100vh; position:relative; display:flex; align-items:center; justify-content:center; background: linear-gradient(160deg, #1a3a3a, #2d6a6a, #1a2e2e); }
-.hero-content { text-align:center; z-index:10; padding:0 24px; }
+.hero-content { text-align:center; z-index:10; padding:0 24px; position:relative; }
 .hero-eyebrow { font-size:11px; letter-spacing:.55em; text-transform:uppercase; color:var(--or); margin-bottom:20px; }
 .hero-title { font-size:clamp(40px,6vw,80px); color:var(--blanc); line-height:1.1; }
 .hero-title em { font-style:italic; color:#a8d8d8; display:block; }
 .hero-subtitle { font-size:16px; color:rgba(255,255,255,.8); max-width:560px; margin:20px auto; line-height:1.8; }
 .hero-ctas { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-top:30px; }
-.hero-badges { position:absolute; bottom:36px; left:0; right:0; display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
+.hero-badges { 
+  position: relative; 
+  margin-top: 40px;
+  display: flex; 
+  gap: 20px; 
+  justify-content: center; 
+  flex-wrap: wrap; 
+  z-index: 10;
+}
 .hero-badge { background:rgba(255,255,255,.1); backdrop-filter:blur(8px); padding:10px 20px; color:var(--blanc); font-size:12px; letter-spacing:.15em; border-radius:30px; }
 
 section { padding:100px 56px; }
@@ -198,19 +206,6 @@ section { padding:100px 56px; }
 }
 .formule-card:hover { transform: translateY(-5px); }
 .formule-card.featured { border: 2px solid var(--or); position: relative; }
-.featured-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--or);
-  color: var(--nuit);
-  padding: 6px 20px;
-  border-radius: 30px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .2em;
-}
 .formule-content { padding: 28px; }
 .formule-title { font-size: 24px; font-weight: 600; color: #000000; }
 .formule-price { font-size: 32px; font-weight: 700; color: var(--eau); margin: 15px 0; }
@@ -358,15 +353,39 @@ footer {
   gap: 16px;
 }
 
+/* RESPONSIVE MOBILE */
 @media (max-width: 1000px) {
   section { padding: 60px 24px; }
   nav { padding: 16px 24px; }
   .nav-links { display: none; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .formules-grid { grid-template-columns: 1fr; }
-  .resa-inner { grid-template-columns: 1fr; }
+  .formules-grid { 
+    grid-template-columns: 1fr; 
+    gap: 25px;
+  }
+  .formule-card.featured {
+    grid-column: span 1 !important;
+    margin-top: 0 !important;
+  }
+  .resa-inner { grid-template-columns: 1fr; gap: 40px; }
   .date-picker-wrapper { flex-direction: column; }
   .map-activities { grid-template-columns: 1fr; }
+  
+  /* Ajustement hero pour mobile - éviter superposition */
+  .hero { min-height: auto; padding: 120px 0 60px; }
+  .hero-badges { 
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .hero-ctas { margin-bottom: 20px; }
+  
+  /* Réduction taille des titres de sections */
+  .section-title { font-size: 28px; }
+  .carousel-title { font-size: 22px; }
+  .carousel-container { height: 280px; }
+  .formule-title { font-size: 20px; }
+  .formule-price { font-size: 28px; }
 }
 .fade-up { opacity: 0; transform: translateY(30px); transition: all .7s ease; }
 .fade-up.visible { opacity: 1; transform: none; }
@@ -394,12 +413,12 @@ footer {
       <a href="#reservation" class="btn-primary">Réserver votre séjour</a>
       <a href="#about" class="btn-outline">Découvrir les gîtes</a>
     </div>
-  </div>
-  <div class="hero-badges">
-    <div class="hero-badge">🏠 1 à 8 pièces</div>
-    <div class="hero-badge">👥 Jusqu'à 15 personnes</div>
-    <div class="hero-badge">🚣 Barques & vélos à 100m</div>
-    <div class="hero-badge">💰 100€ à 400€ / nuit</div>
+    <div class="hero-badges">
+      <div class="hero-badge">🏠 1 à 8 pièces</div>
+      <div class="hero-badge">👥 Jusqu'à 15 personnes</div>
+      <div class="hero-badge">🚣 Barques & vélos à 100m</div>
+      <div class="hero-badge">💰 100€ à 400€ / nuit</div>
+    </div>
   </div>
 </header>
 
@@ -523,7 +542,6 @@ footer {
       </div>
 
       <div class="formule-card featured" style="grid-column: span 3; margin-top: 20px;">
-        <div class="featured-badge">⭐ RECOMMANDÉ ⭐</div>
         <div class="formule-content" style="text-align:center;">
           <div class="formule-title">Propriété complète — 10 + 12</div>
           <div class="formule-address" style="font-size:12px; color:var(--gris);">📍 10-12 Rue du Port aux Moules</div>
@@ -599,7 +617,7 @@ footer {
                 <div style="color:var(--eau); font-weight:700;">250€/nuit</div>
               </div>
               <div class="config-option" data-val="complete" data-label="Propriété complète 10+12" data-price="400" style="padding:16px; border:2px solid var(--or); background:var(--or-pale); border-radius:12px; cursor:pointer;">
-                <div><strong>⭐ PROPRIÉTÉ COMPLÈTE — 10 + 12 ⭐</strong><br>Les deux maisons, jusqu'à 15 personnes</div>
+                <div><strong>PROPRIÉTÉ COMPLÈTE — 10 + 12</strong><br>Les deux maisons, jusqu'à 15 personnes</div>
                 <div style="color:var(--eau); font-size:20px; font-weight:700;">400€/nuit</div>
               </div>
             </div>
@@ -662,7 +680,7 @@ footer {
 <footer>
   <div>LES GÎTES du Port aux Moules · Coulon · Marais Poitevin · Venise Verte</div>
   <div class="footer-bottom">
-    <span>© 2025 · Animaux non acceptés · Prix fixes</span>
+    <span>© 2025 · Animaux non acceptés · Prix fixes peut importe les saisons</span>
     <span>📶 Fibre/WiFi inclus</span>
     <span>📍 10-12 Rue du Port aux Moules, 79510 Coulon</span>
   </div>
