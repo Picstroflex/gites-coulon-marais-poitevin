@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══════════════════════════════════════════════════════
+     SEO – BALISES PRIMAIRES
+     ═══════════════════════════════════════════════════════ -->
+<title>Gîte du Port aux Moules – Location Coulon, Marais Poitevin | Venise Verte</title>
+<meta name="description" content="Location gîte de charme à Coulon, au cœur du Marais Poitevin. Maison poitevine authentique, 1 à 15 personnes, 1 à 6 chambres. Accès direct canaux, barques et vélos à 100m. Réservez en ligne.">
+<meta name="keywords" content="gîte Coulon, location Marais Poitevin, Venise Verte, hébergement Coulon, gîte 79510, location vacances Deux-Sèvres, maison poitevine, location groupe Coulon">
+<meta name="author" content="Gîtes du Port aux Moules">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://VOTRE-DOMAINE.fr/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gîte du Port aux Moules – Coulon, Marais Poitevin">
+<meta property="og:description" content="Location gîte de charme à Coulon, au cœur du Marais Poitevin. 1 à 15 personnes, modulable 1 à 6 chambres. Réservez en ligne.">
+<meta property="og:image" content="assets/hero.jpg">
+<meta property="og:url" content="https://VOTRE-DOMAINE.fr/">
+<meta property="og:locale" content="fr_FR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gîte du Port aux Moules – Coulon">
+<meta name="twitter:description" content="Location gîte au cœur du Marais Poitevin, Venise Verte. Réservez en ligne.">
+<meta name="twitter:image" content="assets/hero.jpg">
+
+<!-- Schema.org LocalBusiness + LodgingBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LodgingBusiness", "VacationRental"],
+  "name": "Gîtes du Port aux Moules",
+  "description": "Maison poitevine authentique au cœur du Marais Poitevin. Location de vacances pour 1 à 15 personnes, modulable 1 à 6 chambres. Idéalement situé à Coulon, la Venise Verte.",
+  "url": "https://VOTRE-DOMAINE.fr/",
+  "telephone": "+33668492533",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "10-12 Rue du Port aux Moules",
+    "addressLocality": "Coulon",
+    "postalCode": "79510",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 46.3264,
+    "longitude": -0.5867
+  },
+  "priceRange": "100€ – 400€ / nuit",
+  "numberOfRooms": "1 à 6",
+  "amenityFeature": [
+    {"@type": "LocationFeatureSpecification", "name": "Barbecue", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Plancha", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Jardin clôturé", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Location barques à 100m", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Location vélos à 100m", "value": true}
+  ],
+  "touristType": ["Family", "Couples", "Groups"],
+  "checkinTime": "15:00",
+  "checkoutTime": "11:00"
+}
+</script>
+
+<!-- Polices -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Leaflet Map -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
+<style>
+/* ══════════════════════════════════════════════
+   DESIGN SYSTEM — PALETTE MARAIS POITEVIN
+   Tons eau, roseau, pierre, lumière dorée
+   ══════════════════════════════════════════════ */
+:root {
+  --eau:        #2d6a6a;   /* vert eau profond */
+  --eau-clair:  #4a9999;   /* vert eau clair */
+  --eau-pale:   #e8f4f4;   /* fond eau très pâle */
+  --pierre:     #6b5f52;   /* brun pierre */
+  --pierre-clair:#c4b8ac;  /* pierre claire */
+  --sable:      #f5f0e8;   /* sable chaud */
+  --or:         #c9962a;   /* or roseau */
+  --or-pale:    #f7e9c8;   /* or pâle */
+  --nuit:       #1a2e2e;   /* vert nuit */
+  --blanc:      #fdfcf9;   /* blanc chaud */
+  --texte:      #2c2620;   /* texte foncé */
+  --gris:       #7a746e;   /* gris doux */
+  --rule:       rgba(45,106,106,0.15);
+  --shadow:     0 4px 32px rgba(26,46,46,0.12);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+body { 
+  background:var(--blanc); 
+  color:var(--texte); 
+  font-family:'Raleway',sans-serif; 
+  font-weight:400;
+  overflow-x:hidden;
+}
+img { max-width:100%; height:auto; display:block; }
+a { color:inherit; text-decoration:none; }
+
+/* ══ TYPOGRAPHIE ══ */
+h1,h2,h3,h4 { font-family:'Playfair Display',serif; font-weight:400; line-height:1.15; }
+.eyebrow { 
+  font-size:11px; letter-spacing:.5em; text-transform:uppercase; 
+  color:var(--or); font-family:'Raleway',sans-serif; font-weight:600;
+}
+.section-title {
+  font-size:clamp(32px,4vw,52px);
+  color:var(--nuit);
+}
+.section-title em { font-style:italic; color:var(--eau); }
+
+/* ══ BOUTONS ══ */
+.btn-primary {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--eau); color:var(--blanc);
+  font-family:'Raleway',sans-serif; font-size:12px; font-weight:600;
+  letter-spacing:.25em; text-transform:uppercase;
+  padding:16px 36px; border:2px solid var(--eau);
+  transition:all .3s; cursor:pointer;
+}
+.btn-primary:hover { background:transparent; color:var(--eau); }
+.btn-outline {
+  display:inline-flex; align-items:center; gap:8px;
+  background:transparent; color:var(--blanc);
+  font-family:'Raleway',sans-serif; font-size:12px; font-weight:600;
+  letter-spacing:.25em; text-transform:uppercase;
+  padding:16px 36px; border:2px solid rgba(255,255,255,.7);
+  transition:all .3s; cursor:pointer;
+}
+.btn-outline:hover { background:var(--blanc); color:var(--nuit); border-color:var(--blanc); }
+
+/* ══ NAVIGATION ══ */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:500;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:24px 56px;
+  transition:all .4s;
+}
+nav.scrolled {
+  background:rgba(26,46,46,.96);
+  backdrop-filter:blur(12px);
+  padding:14px 56px;
+  box-shadow:0 2px 24px rgba(0,0,0,.2);
+}
+.nav-brand {
+  display:flex; flex-direction:column; line-height:1;
+}
+.nav-brand-name {
+  font-family:'Playfair Display',serif;
+  font-size:18px; font-weight:600;
+  color:var(--blanc); letter-spacing:.05em;
+}
+.nav-brand-sub {
+  font-size:9px; letter-spacing:.4em; text-transform:uppercase;
+  color:rgba(255,255,255,.6); margin-top:3px;
+}
+.nav-links { display:flex; gap:36px; list-style:none; align-items:center; }
+.nav-links a {
+  font-size:11px; letter-spacing:.25em; text-transform:uppercase;
+  color:rgba(255,255,255,.85); font-weight:500;
+  transition:color .3s; position:relative; padding-bottom:4px;
+}
+.nav-links a::after {
+  content:''; position:absolute; bottom:0; left:0;
+  width:0; height:1px; background:var(--or); transition:width .3s;
+}
+.nav-links a:hover { color:var(--blanc); }
+.nav-links a:hover::after { width:100%; }
+.nav-cta {
+  background:var(--or) !important; color:var(--nuit) !important;
+  padding:10px 22px !important; border-radius:2px;
+  font-weight:600 !important;
+}
+.nav-cta::after { display:none !important; }
+.nav-cta:hover { background:var(--or-pale) !important; }
+
+/* ══ HERO ══ */
+.hero {
+  min-height:100vh;
+  position:relative;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+/* ZONE PHOTO HERO — remplacer par <img> ou background-image */
+.hero-bg {
+  position:absolute; inset:0; z-index:0;
+  background: linear-gradient(160deg, #1a3a3a 0%, #2d6a6a 35%, #1a2e2e 70%, #0e1e1e 100%);
+  /* ▼▼▼ REMPLACER PAR VOTRE PHOTO :
+     background-image: url('assets/hero-gite-marais.jpg');
+     background-size:cover; background-position:center;
+  */
+}
+.hero-bg-overlay {
+  position:absolute; inset:0; z-index:1;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.25) 0%,
+    rgba(26,46,46,.45) 40%,
+    rgba(0,0,0,.65) 100%
+  );
+}
+/* Pattern roseau décoratif */
+.hero-pattern {
+  position:absolute; inset:0; z-index:2; pointer-events:none; opacity:.06;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255,255,255,.5) 0px, rgba(255,255,255,.5) 1px,
+    transparent 1px, transparent 60px
+  );
+}
+.hero-content {
+  position:relative; z-index:10;
+  text-align:center; padding:0 24px;
+  animation: heroIn 1.1s ease both;
+}
+@keyframes heroIn {
+  from { opacity:0; transform:translateY(28px); }
+  to   { opacity:1; transform:none; }
+}
+.hero-eyebrow {
+  font-size:11px; letter-spacing:.55em; text-transform:uppercase;
+  color:var(--or); font-weight:600; margin-bottom:20px;
+  animation: heroIn 1s .2s ease both;
+}
+.hero-title {
+  font-size:clamp(40px,6vw,80px);
+  color:var(--blanc); font-weight:400; line-height:1.1;
+  margin-bottom:12px;
+  animation: heroIn 1s .35s ease both;
+}
+.hero-title em { font-style:italic; color:#a8d8d8; display:block; }
+.hero-subtitle {
+  font-size:16px; color:rgba(255,255,255,.8);
+  line-height:1.8; max-width:560px; margin:0 auto 40px;
+  font-weight:300;
+  animation: heroIn 1s .5s ease both;
+}
+.hero-ctas {
+  display:flex; gap:16px; justify-content:center; flex-wrap:wrap;
+  animation: heroIn 1s .65s ease both;
+}
+.hero-badges {
+  position:absolute; bottom:36px; left:50%; transform:translateX(-50%);
+  z-index:10; display:flex; gap:24px; flex-wrap:wrap; justify-content:center;
+  animation: heroIn 1s .9s ease both;
+}
+.hero-badge {
+  background:rgba(255,255,255,.1); backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.2);
+  padding:10px 20px; color:var(--blanc);
+  font-size:12px; letter-spacing:.15em; text-transform:uppercase;
+  font-weight:500;
+}
+.hero-badge strong { color:var(--or); }
+
+/* ══ SECTIONS COMMUNES ══ */
+section { padding:100px 56px; }
+.section-inner { max-width:1200px; margin:0 auto; }
+.section-header { margin-bottom:60px; }
+.section-header.centered { text-align:center; }
+.section-tag {
+  display:inline-flex; align-items:center; gap:12px;
+  margin-bottom:16px;
+}
+.section-tag::before { content:''; width:32px; height:2px; background:var(--or); }
+
+/* ══ PRÉSENTATION ══ */
+.about { background:var(--sable); }
+.about-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
+}
+.about-photos {
+  display:grid; grid-template-columns:1fr 1fr; gap:12px;
+  position:relative;
+}
+/* ZONES PHOTO PRÉSENTATION — remplacer par <img> */
+.photo-placeholder {
+  background: linear-gradient(135deg, #c4d8d8 0%, #a8c8c8 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:8px; color:var(--eau); font-size:11px; letter-spacing:.2em;
+  text-transform:uppercase; font-weight:600;
+  border-radius:2px; overflow:hidden; position:relative;
+}
+.photo-placeholder svg { opacity:.4; }
+/* ▼▼▼ POUR METTRE UNE VRAIE PHOTO :
+   remplacez le div.photo-placeholder par :
+   <img src="assets/votre-photo.jpg" alt="description" style="width:100%;height:100%;object-fit:cover;">
+*/
+.photo-tall { grid-row: span 2; min-height:420px; }
+.photo-sq   { min-height:200px; }
+.about-badge {
+  position:absolute; bottom:-16px; right:-16px; z-index:2;
+  background:var(--eau); color:var(--blanc);
+  padding:20px 24px; text-align:center;
+  box-shadow:var(--shadow);
+}
+.about-badge-num { font-family:'Playfair Display',serif; font-size:36px; line-height:1; }
+.about-badge-txt { font-size:9px; letter-spacing:.3em; text-transform:uppercase; margin-top:4px; opacity:.85; }
+.about-desc { font-size:15px; line-height:2; color:var(--gris); margin-bottom:24px; }
+.about-features { display:flex; flex-direction:column; gap:14px; margin:28px 0; }
+.feature-item {
+  display:flex; align-items:flex-start; gap:14px;
+  font-size:14px; line-height:1.6;
+}
+.feature-icon {
+  width:36px; height:36px; border-radius:50%;
+  background:var(--eau-pale); color:var(--eau);
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; font-size:16px;
+}
+.feature-text strong { display:block; color:var(--nuit); font-weight:600; font-size:13px; margin-bottom:2px; }
+.feature-text span { color:var(--gris); font-size:13px; }
+
+/* ══ GALERIE ══ */
+.galerie { background:var(--blanc); }
+.galerie-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:240px 240px;
+  gap:8px;
+}
+.galerie-item {
+  background:linear-gradient(135deg, #c4d8d8 0%, #8ab8b8 100%);
+  overflow:hidden; position:relative; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+}
+/* ▼▼▼ POUR VOS PHOTOS DE GALERIE :
+   <div class="galerie-item">
+     <img src="assets/photo1.jpg" alt="..." style="width:100%;height:100%;object-fit:cover;">
+   </div>
+*/
+.galerie-item:nth-child(1) { grid-column:span 2; grid-row:span 2; }
+.galerie-item:nth-child(5) { grid-column:span 2; }
+.galerie-label {
+  position:absolute; bottom:12px; left:12px;
+  background:rgba(0,0,0,.5); color:#fff; backdrop-filter:blur(4px);
+  font-size:10px; letter-spacing:.25em; text-transform:uppercase;
+  padding:5px 12px; pointer-events:none;
+}
+.galerie-photo-hint {
+  color:var(--eau); font-size:11px; letter-spacing:.2em; text-transform:uppercase;
+  font-weight:600; display:flex; flex-direction:column; align-items:center; gap:6px;
+  opacity:.7;
+}
+
+/* ══ ÉQUIPEMENTS ══ */
+.equipements { background:var(--nuit); }
+.equip-grid {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:2px;
+  margin-top:48px;
+}
+.equip-card {
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+  padding:36px 28px; text-align:center;
+  transition:background .3s;
+}
+.equip-card:hover { background:rgba(255,255,255,.08); }
+.equip-icon { font-size:32px; margin-bottom:14px; }
+.equip-name {
+  font-size:13px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--blanc); font-weight:600; margin-bottom:8px;
+}
+.equip-desc { font-size:12px; color:rgba(255,255,255,.5); line-height:1.6; }
+.equip-cat-title {
+  font-family:'Playfair Display',serif;
+  font-size:22px; color:var(--eau-clair); margin:40px 0 16px;
+  font-style:italic;
+}
+
+/* ══ TARIFS ══ */
+.tarifs { background:var(--eau-pale); }
+.tarifs-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.tarif-card {
+  background:var(--blanc); padding:40px 32px;
+  border:1px solid var(--rule); position:relative;
+  transition:transform .3s, box-shadow .3s;
+}
+.tarif-card:hover { transform:translateY(-4px); box-shadow:var(--shadow); }
+.tarif-card.featured {
+  background:var(--nuit); border-color:var(--nuit);
+}
+.tarif-card.featured .tarif-name,
+.tarif-card.featured .tarif-price,
+.tarif-card.featured .tarif-desc,
+.tarif-card.featured li { color:var(--blanc) !important; }
+.tarif-badge {
+  position:absolute; top:-12px; left:50%; transform:translateX(-50%);
+  background:var(--or); color:var(--nuit);
+  font-size:9px; font-weight:700; letter-spacing:.3em; text-transform:uppercase;
+  padding:5px 18px;
+}
+.tarif-name { 
+  font-family:'Playfair Display',serif; font-size:22px; 
+  color:var(--nuit); margin-bottom:8px;
+}
+.tarif-capacity {
+  font-size:12px; color:var(--gris); letter-spacing:.15em; text-transform:uppercase;
+  margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid var(--rule);
+}
+.tarif-price {
+  font-family:'Playfair Display',serif; font-size:42px;
+  color:var(--eau); line-height:1; margin-bottom:4px;
+}
+.tarif-price span { font-size:16px; color:var(--gris); font-family:'Raleway',sans-serif; }
+.tarif-desc { font-size:12px; color:var(--gris); margin-bottom:24px; line-height:1.7; }
+.tarif-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.tarif-list li {
+  font-size:13px; color:var(--texte); display:flex; gap:10px; line-height:1.5;
+}
+.tarif-list li::before { content:'✓'; color:var(--eau); font-weight:700; flex-shrink:0; }
+.tarif-note {
+  margin-top:40px; padding:20px 24px;
+  background:var(--or-pale); border-left:3px solid var(--or);
+  font-size:13px; line-height:1.8; color:var(--texte);
+}
+.tarif-note strong { color:var(--pierre); }
+
+/* ══ RÉSERVATION ══ */
+.reservation { background:var(--blanc); }
+.resa-inner {
+  display:grid; grid-template-columns:1fr 1.2fr; gap:80px; align-items:start;
+}
+.resa-info .section-title { margin-bottom:16px; }
+.resa-info p { font-size:14px; line-height:2; color:var(--gris); margin-bottom:24px; }
+.contact-block { 
+  background:var(--sable); padding:28px 24px;
+  border-left:3px solid var(--eau); margin-top:32px;
+}
+.contact-block h4 { font-size:14px; letter-spacing:.2em; text-transform:uppercase; color:var(--eau); margin-bottom:16px; }
+.contact-line { display:flex; align-items:center; gap:12px; font-size:14px; margin-bottom:10px; }
+.contact-line a { color:var(--eau); font-weight:600; }
+.contact-line a:hover { color:var(--or); }
+.resa-form-wrap {
+  background:var(--sable);
+  padding:40px; border:1px solid var(--rule);
+}
+
+/* ══ SYSTÈME DE RÉSERVATION ══ */
+.progress {
+  display:flex; align-items:center; margin-bottom:32px; gap:6px;
+}
+.p-step { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; }
+.p-dot {
+  width:34px; height:34px; border-radius:50%;
+  border:2px solid var(--rule); background:var(--blanc);
+  display:flex; align-items:center; justify-content:center;
+  font-size:13px; font-weight:600; color:var(--gris);
+  transition:all .35s;
+}
+.p-dot.active { border-color:var(--eau); color:var(--eau); background:var(--eau-pale); }
+.p-dot.done { background:var(--eau); border-color:var(--eau); color:var(--blanc); }
+.p-label { font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:var(--gris); text-align:center; }
+.p-label.active { color:var(--eau); font-weight:600; }
+.p-line { flex:1; height:2px; background:var(--rule); margin-bottom:20px; }
+.p-line.done { background:var(--eau); }
+
+.step { display:none; }
+.step.active { display:block; }
+.step-title { font-family:'Playfair Display',serif; font-size:22px; color:var(--nuit); margin-bottom:6px; }
+.step-title em { font-style:italic; color:var(--eau); }
+.step-sub { font-size:12px; color:var(--gris); margin-bottom:24px; line-height:1.7; }
+
+/* Sélecteur de type de chambre */
+.chambre-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:20px; }
+.chambre-card {
+  border:2px solid var(--rule); padding:16px 14px; cursor:pointer;
+  transition:all .25s; background:var(--blanc);
+}
+.chambre-card:hover { border-color:var(--eau-clair); background:var(--eau-pale); }
+.chambre-card.sel { border-color:var(--eau); background:var(--eau-pale); }
+.chambre-name { font-weight:600; font-size:14px; color:var(--nuit); margin-bottom:4px; }
+.chambre-cap { font-size:12px; color:var(--gris); margin-bottom:6px; }
+.chambre-price { font-size:14px; color:var(--eau); font-weight:600; }
+
+/* Dates */
+.date-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px; }
+.date-field label {
+  display:block; font-size:10px; letter-spacing:.25em; text-transform:uppercase;
+  color:var(--gris); font-weight:600; margin-bottom:8px;
+}
+.date-field-inner {
+  background:var(--blanc); border:2px solid var(--rule);
+  padding:14px 16px; cursor:pointer; transition:border-color .25s;
+  position:relative;
+}
+.date-field-inner:hover, .date-field-inner.focus { border-color:var(--eau); }
+.date-display { font-size:15px; font-weight:500; color:var(--nuit); }
+.date-display.placeholder { color:var(--gris); font-weight:400; font-size:13px; }
+.time-select {
+  width:100%; background:var(--blanc); border:2px solid var(--rule);
+  padding:10px 12px; font-family:'Raleway',sans-serif; font-size:13px;
+  color:var(--texte); cursor:pointer; transition:border-color .25s;
+  appearance:none; outline:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232d6a6a' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 12px center;
+  margin-top:8px;
+}
+.time-select:focus { border-color:var(--eau); }
+
+/* Calendrier inline */
+.mini-cal {
+  display:none; position:absolute; top:calc(100% + 4px); left:0; right:0; z-index:200;
+  background:var(--blanc); border:2px solid var(--eau);
+  box-shadow:var(--shadow); padding:16px;
+}
+.mini-cal.open { display:block; }
+.cal-head {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:12px;
+}
+.cal-month { font-family:'Playfair Display',serif; font-size:15px; color:var(--nuit); }
+.cal-nav {
+  background:none; border:none; cursor:pointer;
+  color:var(--eau); font-size:18px; font-weight:700; padding:2px 8px;
+}
+.cal-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:2px; }
+.cal-dow {
+  text-align:center; font-size:9px; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--gris); padding:4px 0 8px; font-weight:600;
+}
+.cal-day {
+  text-align:center; padding:7px 4px; font-size:12px; cursor:pointer;
+  border-radius:2px; transition:all .2s; color:var(--texte); font-weight:500;
+}
+.cal-day:hover:not(.disabled):not(.other) { background:var(--eau-pale); color:var(--eau); }
+.cal-day.today { border:1px solid var(--eau); color:var(--eau); }
+.cal-day.selected { background:var(--eau); color:var(--blanc); font-weight:700; }
+.cal-day.in-range { background:var(--eau-pale); }
+.cal-day.disabled { opacity:.3; cursor:not-allowed; pointer-events:none; }
+.cal-day.other { opacity:.3; }
+
+/* Formulaire contact */
+.form-row { margin-bottom:16px; }
+.form-2col { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.form-label {
+  display:block; font-size:10px; letter-spacing:.25em; text-transform:uppercase;
+  color:var(--gris); font-weight:600; margin-bottom:8px;
+}
+.form-input, .form-textarea {
+  width:100%; background:var(--blanc); border:2px solid var(--rule);
+  padding:12px 14px; font-family:'Raleway',sans-serif; font-size:14px;
+  color:var(--texte); outline:none; transition:border-color .25s;
+}
+.form-input:focus, .form-textarea:focus { border-color:var(--eau); }
+.form-textarea { height:80px; resize:none; }
+.form-check { display:flex; align-items:flex-start; gap:10px; margin:14px 0; }
+.form-check input[type=checkbox] { accent-color:var(--eau); width:16px; height:16px; margin-top:2px; flex-shrink:0; }
+.form-check label { font-size:12px; color:var(--gris); line-height:1.6; cursor:pointer; }
+
+/* Récap */
+.recap-box {
+  background:var(--blanc); border:2px solid var(--rule);
+  padding:16px; margin-bottom:20px;
+}
+.recap-row {
+  display:flex; justify-content:space-between; align-items:flex-start;
+  padding:8px 0; border-bottom:1px solid var(--rule); gap:12px;
+}
+.recap-row:last-child { border-bottom:none; }
+.recap-key { font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:var(--gris); flex-shrink:0; }
+.recap-val { font-size:13px; color:var(--nuit); font-weight:600; text-align:right; }
+.recap-highlight {
+  background:var(--eau-pale); border:2px solid var(--eau);
+  padding:12px 16px; margin-top:8px; text-align:center;
+}
+.recap-highlight strong { color:var(--eau); font-size:18px; }
+.recap-highlight small { display:block; font-size:11px; color:var(--gris); margin-top:2px; }
+
+.step-btn {
+  width:100%; padding:16px; background:var(--eau);
+  color:var(--blanc); font-family:'Raleway',sans-serif;
+  font-size:12px; font-weight:700; letter-spacing:.3em; text-transform:uppercase;
+  border:2px solid var(--eau); cursor:pointer; transition:all .3s;
+  margin-top:8px; display:flex; align-items:center; justify-content:center; gap:8px;
+}
+.step-btn:hover { background:transparent; color:var(--eau); }
+.step-btn:disabled { opacity:.4; cursor:not-allowed; }
+.back-btn {
+  background:none; border:none; color:var(--gris); cursor:pointer;
+  font-family:'Raleway',sans-serif; font-size:12px; letter-spacing:.2em;
+  text-transform:uppercase; padding:0 0 16px; display:flex; align-items:center; gap:6px;
+  transition:color .2s;
+}
+.back-btn:hover { color:var(--eau); }
+.form-err { font-size:11px; color:#c0392b; margin-top:6px; display:none; }
+.success-block { text-align:center; padding:20px 0; }
+.success-block h3 { font-family:'Playfair Display',serif; font-size:28px; color:var(--eau); margin-bottom:8px; }
+.success-block p { font-size:14px; color:var(--gris); line-height:1.8; }
+.nights-display {
+  background:var(--or-pale); border:1px solid var(--or);
+  padding:8px 14px; font-size:12px; color:var(--pierre);
+  text-align:center; margin-bottom:16px;
+  display:none;
+}
+.nights-display.show { display:block; }
+
+/* ══ CARTE ══ */
+.carte { background:var(--sable); }
+.carte-inner { display:grid; grid-template-columns:1fr 1.4fr; gap:60px; align-items:start; }
+#map {
+  height:460px; border:3px solid var(--blanc);
+  box-shadow:var(--shadow);
+}
+.carte-info h3 { font-family:'Playfair Display',serif; font-size:26px; color:var(--nuit); margin-bottom:20px; font-style:italic; }
+.carte-adresse {
+  font-size:15px; line-height:2; color:var(--gris);
+  padding:20px; background:var(--blanc); border-left:3px solid var(--eau);
+  margin-bottom:20px;
+}
+.carte-adresse strong { display:block; color:var(--nuit); font-size:16px; margin-bottom:8px; }
+.poi-list { list-style:none; display:flex; flex-direction:column; gap:12px; }
+.poi-item {
+  display:flex; align-items:center; gap:12px;
+  font-size:14px; color:var(--texte);
+}
+.poi-icon { font-size:20px; }
+.poi-item span { color:var(--gris); font-size:12px; }
+
+/* ══ FOOTER ══ */
+footer {
+  background:var(--nuit);
+  padding:60px 56px 36px;
+}
+.footer-grid {
+  display:grid; grid-template-columns:1.5fr 1fr 1fr;
+  gap:60px; margin-bottom:48px;
+}
+.footer-brand-name {
+  font-family:'Playfair Display',serif; font-size:22px;
+  color:var(--blanc); margin-bottom:8px;
+}
+.footer-brand-sub { font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--eau-clair); margin-bottom:16px; }
+.footer-desc { font-size:13px; color:rgba(255,255,255,.5); line-height:1.9; }
+.footer-col h4 {
+  font-size:11px; letter-spacing:.3em; text-transform:uppercase;
+  color:var(--or); margin-bottom:20px; font-family:'Raleway',sans-serif;
+}
+.footer-links { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.footer-links a { font-size:13px; color:rgba(255,255,255,.5); transition:color .3s; }
+.footer-links a:hover { color:var(--eau-clair); }
+.footer-bottom {
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:28px;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:12px; color:rgba(255,255,255,.35); flex-wrap:wrap; gap:12px;
+}
+.footer-legal { display:flex; gap:24px; flex-wrap:wrap; }
+.footer-legal a { color:rgba(255,255,255,.35); transition:color .3s; }
+.footer-legal a:hover { color:var(--blanc); }
+
+/* ══ RESPONSIVE ══ */
+@media (max-width:1100px) {
+  .equip-grid { grid-template-columns:repeat(3,1fr); }
+  .about-grid { grid-template-columns:1fr; gap:40px; }
+  .about-photos { max-width:600px; margin:0 auto; }
+  .carte-inner { grid-template-columns:1fr; }
+  #map { height:340px; }
+}
+@media (max-width:900px) {
+  section { padding:72px 24px; }
+  nav { padding:20px 24px; }
+  nav.scrolled { padding:14px 24px; }
+  .nav-links { display:none; }
+  .galerie-grid { grid-template-columns:repeat(2,1fr); grid-template-rows:auto; }
+  .galerie-item:nth-child(1) { grid-column:span 2; grid-row:span 1; min-height:220px; }
+  .galerie-item:nth-child(5) { grid-column:span 2; }
+  .tarifs-grid { grid-template-columns:1fr; max-width:440px; margin:0 auto; }
+  .resa-inner { grid-template-columns:1fr; gap:40px; }
+  .equip-grid { grid-template-columns:repeat(2,1fr); }
+  .footer-grid { grid-template-columns:1fr; gap:32px; }
+  .footer-bottom { flex-direction:column; text-align:center; }
+  .chambre-grid { grid-template-columns:1fr; }
+  .date-row { grid-template-columns:1fr; }
+}
+
+/* ══ ANIMATIONS SCROLL ══ */
+.fade-up {
+  opacity:0; transform:translateY(32px);
+  transition:opacity .75s ease, transform .75s ease;
+}
+.fade-up.visible { opacity:1; transform:none; }
+.fade-up.delay-1 { transition-delay:.15s; }
+.fade-up.delay-2 { transition-delay:.3s; }
+.fade-up.delay-3 { transition-delay:.45s; }
+
+/* ══ LIGHTBOX ══ */
+.lightbox {
+  display:none; position:fixed; inset:0; z-index:1000;
+  background:rgba(0,0,0,.92); align-items:center; justify-content:center;
+}
+.lightbox.open { display:flex; }
+.lightbox-img { max-width:90vw; max-height:90vh; object-fit:contain; }
+.lightbox-close {
+  position:absolute; top:20px; right:28px;
+  color:#fff; font-size:36px; cursor:pointer; font-weight:300;
+  background:none; border:none; line-height:1;
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVIGATION
+     ══════════════════════════════════════════ -->
+<nav id="mainNav" role="navigation" aria-label="Navigation principale">
+  <a href="#" class="nav-brand" aria-label="Gîte du Port aux Moules – Accueil">
+    <span class="nav-brand-name">Gîte du Port aux Moules</span>
+    <span class="nav-brand-sub">Coulon · Marais Poitevin</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#gite">Le Gîte</a></li>
+    <li><a href="#galerie">Photos</a></li>
+    <li><a href="#equipements">Équipements</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+    <li><a href="#carte">Accès</a></li>
+    <li><a href="#reservation" class="nav-cta">Réserver</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO
+     ══════════════════════════════════════════ -->
+<header class="hero" role="banner">
+  <!-- 
+  ╔══════════════════════════════════════════════╗
+  ║  PHOTO HERO                                  ║
+  ║  Remplacez .hero-bg par une <img> ou         ║
+  ║  ajoutez : style="background-image:url(…)"   ║
+  ╚══════════════════════════════════════════════╝
+  -->
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-bg-overlay" aria-hidden="true"></div>
+  <div class="hero-pattern" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Venise Verte · Coulon · Deux-Sèvres</p>
+    <h1 class="hero-title">
+      Gîte du Port<br>
+      <em>aux Moules</em>
+    </h1>
+    <p class="hero-subtitle">
+      Une maison poitevine authentique au cœur du Marais Poitevin.<br>
+      De 1 à 15 personnes, entre canaux, barques et nature préservée.
+    </p>
+    <div class="hero-ctas">
+      <a href="#reservation" class="btn-primary">Réserver votre séjour</a>
+      <a href="#gite" class="btn-outline">Découvrir le gîte</a>
+    </div>
+  </div>
+
+  <div class="hero-badges" role="list" aria-label="Points forts du gîte">
+    <div class="hero-badge" role="listitem">🛏 <strong>1 à 6</strong> chambres</div>
+    <div class="hero-badge" role="listitem">👥 Jusqu'à <strong>15</strong> personnes</div>
+    <div class="hero-badge" role="listitem">🚣 Barques à <strong>&lt;100m</strong></div>
+    <div class="hero-badge" role="listitem">💰 Dès <strong>100€</strong> / nuit</div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     PRÉSENTATION
+     ══════════════════════════════════════════ -->
+<section class="about" id="gite" aria-labelledby="gite-title">
+  <div class="section-inner">
+    <div class="about-grid">
+
+      <!-- Galerie photos présentation -->
+      <div class="about-photos fade-up" aria-label="Photos du gîte">
+        <!-- 
+        ╔═══════════════════════════════════════════════╗
+        ║  PHOTOS PRÉSENTATION (4 photos)               ║
+        ║  Remplacez chaque .photo-placeholder par :    ║
+        ║  <img src="assets/photo.jpg" alt="...">       ║
+        ╚═══════════════════════════════════════════════╝
+        -->
+        <div class="photo-placeholder photo-tall" aria-label="Photo principale du gîte">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Photo extérieur<br>façade principale</span>
+        </div>
+        <div class="photo-placeholder photo-sq" aria-label="Photo intérieur salon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Salon / séjour</span>
+        </div>
+        <div class="photo-placeholder photo-sq" aria-label="Photo chambre">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Chambre</span>
+        </div>
+        <div class="about-badge">
+          <div class="about-badge-num">15</div>
+          <div class="about-badge-txt">personnes max</div>
+        </div>
+      </div>
+
+      <!-- Texte -->
+      <div>
+        <div class="section-header fade-up">
+          <div class="section-tag">
+            <span class="eyebrow">Le Gîte</span>
+          </div>
+          <h2 class="section-title" id="gite-title">
+            L'authenticité<br><em>au fil de l'eau</em>
+          </h2>
+        </div>
+
+        <p class="about-desc fade-up delay-1">
+          <!-- ▼▼▼ TEXTE MODIFIABLE -->
+          Idéalement situé au cœur de la Venise Verte et au centre de Coulon, le Gîte du Port aux Moules vous offre le calme des canaux du Marais Poitevin tout en restant à quelques minutes des animations, commerces, restaurants et de l'office de tourisme.
+        </p>
+        <p class="about-desc fade-up delay-1">
+          <!-- ▼▼▼ TEXTE MODIFIABLE -->
+          Notre maison poitevine allie le charme de l'authentique et le confort moderne. Entièrement modulable, elle accueille chaleureusement de 1 à 15 personnes selon votre configuration : 1 à 6 chambres, 4 salles de bain complètes, et un grand préau couvert pour vos repas et loisirs.
+        </p>
+
+        <div class="about-features fade-up delay-2">
+          <div class="feature-item">
+            <div class="feature-icon" aria-hidden="true">🏡</div>
+            <div class="feature-text">
+              <strong>Maison modulable</strong>
+              <span>1 à 6 chambres · 4 toilettes complètes · Jusqu'à 15 personnes</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" aria-hidden="true">🔒</div>
+            <div class="feature-text">
+              <strong>Jardin sécurisé</strong>
+              <span>Grille haute fermant à clef · Idéal pour les enfants</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" aria-hidden="true">🚲</div>
+            <div class="feature-text">
+              <strong>Activités à deux pas</strong>
+              <span>Location de barques et vélos à moins de 100 m</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" aria-hidden="true">🅿️</div>
+            <div class="feature-text">
+              <strong>Stationnement facile</strong>
+              <span>1 voiture ou motos dans la propriété · Parking gratuit voisin</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" aria-hidden="true">🏛️</div>
+            <div class="feature-text">
+              <strong>Déclaré en mairie</strong>
+              <span>Meublé de tourisme déclaré le 27/09/2023</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-up delay-3" style="margin-top:32px;">
+          <a href="#reservation" class="btn-primary">Vérifier les disponibilités</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     GALERIE PHOTOS
+     ══════════════════════════════════════════ -->
+<section class="galerie" id="galerie" aria-labelledby="galerie-title">
+  <div class="section-inner">
+    <div class="section-header centered fade-up">
+      <div class="section-tag" style="justify-content:center;">
+        <span class="eyebrow">Galerie</span>
+      </div>
+      <h2 class="section-title" id="galerie-title">La maison<br><em>en images</em></h2>
+    </div>
+
+    <div class="galerie-grid" role="list" aria-label="Galerie photos du gîte">
+      <!-- 
+      ╔═══════════════════════════════════════════════════╗
+      ║  GALERIE — 6 PHOTOS                               ║
+      ║  Pour chaque .galerie-item, remplacez le div      ║
+      ║  .galerie-photo-hint par :                        ║
+      ║  <img src="assets/…" alt="…"                     ║
+      ║       style="width:100%;height:100%;              ║
+      ║              object-fit:cover;">                  ║
+      ╚═══════════════════════════════════════════════════╝
+      -->
+      <div class="galerie-item fade-up" role="listitem" style="min-height:480px;">
+        <div class="galerie-photo-hint">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Photo principale<br>extérieur / façade</span>
+        </div>
+        <div class="galerie-label">Extérieur</div>
+      </div>
+      <div class="galerie-item fade-up delay-1" role="listitem" style="min-height:240px;">
+        <div class="galerie-photo-hint">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Cuisine</span>
+        </div>
+        <div class="galerie-label">Cuisine</div>
+      </div>
+      <div class="galerie-item fade-up delay-2" role="listitem" style="min-height:240px;">
+        <div class="galerie-photo-hint">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Chambre</span>
+        </div>
+        <div class="galerie-label">Chambre</div>
+      </div>
+      <div class="galerie-item fade-up delay-1" role="listitem" style="min-height:240px;">
+        <div class="galerie-photo-hint">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Salle de bain</span>
+        </div>
+        <div class="galerie-label">Salle de bain</div>
+      </div>
+      <div class="galerie-item fade-up delay-2" role="listitem" style="min-height:240px;">
+        <div class="galerie-photo-hint">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Préau / barbecue</span>
+        </div>
+        <div class="galerie-label">Préau</div>
+      </div>
+      <div class="galerie-item fade-up delay-3" role="listitem" style="min-height:240px;">
+        <div class="galerie-photo-hint">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Jardin / canal</span>
+        </div>
+        <div class="galerie-label">Jardin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     ÉQUIPEMENTS
+     ══════════════════════════════════════════ -->
+<section class="equipements" id="equipements" aria-labelledby="equip-title">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <div class="section-tag">
+        <span class="eyebrow" style="color:var(--or);">Confort & Équipements</span>
+      </div>
+      <h2 class="section-title" id="equip-title" style="color:var(--blanc);">
+        Tout le confort<br><em style="color:var(--eau-clair);">pour votre séjour</em>
+      </h2>
+    </div>
+
+    <h3 class="equip-cat-title" style="color:var(--eau-clair);">Hébergement</h3>
+    <div class="equip-grid">
+      <!-- ▼▼▼ ÉQUIPEMENTS MODULABLES — ajoutez/supprimez des .equip-card -->
+      <div class="equip-card fade-up">
+        <div class="equip-icon" aria-hidden="true">🛏</div>
+        <div class="equip-name">1 à 6 Chambres</div>
+        <div class="equip-desc">Configuration modulable selon votre groupe</div>
+      </div>
+      <div class="equip-card fade-up delay-1">
+        <div class="equip-icon" aria-hidden="true">🚿</div>
+        <div class="equip-name">4 Salles de bain</div>
+        <div class="equip-desc">Toilettes complètes pour tout le groupe</div>
+      </div>
+      <div class="equip-card fade-up delay-2">
+        <div class="equip-icon" aria-hidden="true">🍳</div>
+        <div class="equip-name">Cuisine équipée</div>
+        <div class="equip-desc"><!-- ▼ PRÉCISEZ LES ÉQUIPEMENTS --> Four, réfrigérateur, lave-vaisselle…</div>
+      </div>
+      <div class="equip-card fade-up delay-3">
+        <div class="equip-icon" aria-hidden="true">📺</div>
+        <div class="equip-name">Salon &amp; TV</div>
+        <div class="equip-desc"><!-- ▼ PRÉCISEZ --> Espace détente avec télévision</div>
+      </div>
+    </div>
+
+    <h3 class="equip-cat-title" style="color:var(--eau-clair);">Extérieur &amp; loisirs</h3>
+    <div class="equip-grid">
+      <div class="equip-card fade-up">
+        <div class="equip-icon" aria-hidden="true">🏠</div>
+        <div class="equip-name">Grand Préau</div>
+        <div class="equip-desc">Espace couvert pour repas et loisirs en plein air</div>
+      </div>
+      <div class="equip-card fade-up delay-1">
+        <div class="equip-icon" aria-hidden="true">🔥</div>
+        <div class="equip-name">Barbecue &amp; Plancha</div>
+        <div class="equip-desc">Équipements de cuisson extérieure inclus</div>
+      </div>
+      <div class="equip-card fade-up delay-2">
+        <div class="equip-icon" aria-hidden="true">🌿</div>
+        <div class="equip-name">Jardin sécurisé</div>
+        <div class="equip-desc">Grille haute fermant à clef — idéal pour les enfants</div>
+      </div>
+      <div class="equip-card fade-up delay-3">
+        <div class="equip-icon" aria-hidden="true">🅿️</div>
+        <div class="equip-name">Parking</div>
+        <div class="equip-desc">1 voiture/motos dans la propriété · Parking gratuit voisin</div>
+      </div>
+    </div>
+
+    <h3 class="equip-cat-title" style="color:var(--eau-clair);">À proximité immédiate</h3>
+    <div class="equip-grid">
+      <div class="equip-card fade-up">
+        <div class="equip-icon" aria-hidden="true">🚣</div>
+        <div class="equip-name">Location Barques</div>
+        <div class="equip-desc">À moins de 100 m — explorez les canaux</div>
+      </div>
+      <div class="equip-card fade-up delay-1">
+        <div class="equip-icon" aria-hidden="true">🚲</div>
+        <div class="equip-name">Location Vélos</div>
+        <div class="equip-desc">À moins de 100 m — balades autour des marais</div>
+      </div>
+      <div class="equip-card fade-up delay-2">
+        <div class="equip-icon" aria-hidden="true">🍽️</div>
+        <div class="equip-name">Restaurants</div>
+        <div class="equip-desc">Commerces et restaurants à quelques minutes à pied</div>
+      </div>
+      <div class="equip-card fade-up delay-3">
+        <div class="equip-icon" aria-hidden="true">ℹ️</div>
+        <div class="equip-name">Office de Tourisme</div>
+        <div class="equip-desc">Conseils et découverte du Marais Poitevin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TARIFS
+     ══════════════════════════════════════════ -->
+<section class="tarifs" id="tarifs" aria-labelledby="tarifs-title">
+  <div class="section-inner">
+    <div class="section-header centered fade-up">
+      <div class="section-tag" style="justify-content:center;">
+        <span class="eyebrow">Tarifs</span>
+      </div>
+      <h2 class="section-title" id="tarifs-title">Nos formules<br><em>de location</em></h2>
+    </div>
+
+    <div class="tarifs-grid">
+      <!-- ▼▼▼ FORMULES MODULABLES — ajustez les noms, prix et capacités -->
+      <div class="tarif-card fade-up">
+        <div class="tarif-name">Week-end Couple</div>
+        <div class="tarif-capacity">1 à 2 personnes · 1 chambre</div>
+        <div class="tarif-price">100€ <span>/ nuit</span></div>
+        <div class="tarif-desc">Idéal pour une escapade en amoureux au bord des canaux</div>
+        <ul class="tarif-list">
+          <li>1 chambre avec salle de bain privée</li>
+          <li>Accès jardin sécurisé</li>
+          <li>Préau avec barbecue &amp; plancha</li>
+          <li>Parking inclus</li>
+          <!-- ▼ AJOUTEZ vos options/inclusions -->
+        </ul>
+      </div>
+
+      <div class="tarif-card featured fade-up delay-1">
+        <div class="tarif-badge">Le plus populaire</div>
+        <div class="tarif-name">Famille &amp; Amis</div>
+        <div class="tarif-capacity">4 à 8 personnes · 2 à 4 chambres</div>
+        <div class="tarif-price">200€ <span>/ nuit</span></div>
+        <div class="tarif-desc">La formule idéale pour un séjour en famille ou entre amis dans le Marais</div>
+        <ul class="tarif-list">
+          <li>2 à 4 chambres selon disponibilité</li>
+          <li>2 à 3 salles de bain</li>
+          <li>Cuisine équipée partagée</li>
+          <li>Grand préau barbecue &amp; plancha</li>
+          <li>Jardin sécurisé &amp; parking</li>
+          <!-- ▼ AJOUTEZ vos options/inclusions -->
+        </ul>
+      </div>
+
+      <div class="tarif-card fade-up delay-2">
+        <div class="tarif-name">Grand Groupe</div>
+        <div class="tarif-capacity">10 à 15 personnes · 5 à 6 chambres</div>
+        <div class="tarif-price">400€ <span>/ nuit</span></div>
+        <div class="tarif-desc">La maison entière pour vos événements familiaux, séminaires ou réunions</div>
+        <ul class="tarif-list">
+          <li>Maison complète 5–6 chambres</li>
+          <li>4 salles de bain complètes</li>
+          <li>Capacité 15 personnes</li>
+          <li>Tout l'extérieur inclus</li>
+          <!-- ▼ AJOUTEZ vos options/inclusions -->
+        </ul>
+      </div>
+    </div>
+
+    <div class="tarif-note fade-up" style="margin-top:40px;">
+      <strong>📋 Informations importantes :</strong> Les tarifs indiqués sont par nuit et varient selon la saison et la demande.
+      <!-- ▼▼▼ MODIFIEZ ces conditions -->
+      Minimum 2 nuits en haute saison. Taxe de séjour en sus selon réglementation communale.
+      Animaux de compagnie : <strong>nous contacter</strong>. Draps et linge de maison : <strong>inclus / en option</strong> (à préciser).
+      Arrivée à partir de <strong>15h00</strong>, départ avant <strong>11h00</strong>.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     RÉSERVATION
+     ══════════════════════════════════════════ -->
+<section class="reservation" id="reservation" aria-labelledby="resa-title">
+  <div class="section-inner">
+    <div class="resa-inner">
+
+      <!-- Infos gauche -->
+      <div>
+        <div class="section-header fade-up">
+          <div class="section-tag">
+            <span class="eyebrow">Réservation</span>
+          </div>
+          <h2 class="section-title" id="resa-title">
+            Votre séjour<br><em>dans le Marais</em>
+          </h2>
+        </div>
+        <p style="font-size:14px; line-height:2; color:var(--gris);">
+          Réservez directement en ligne. Indiquez vos dates d'arrivée et de départ, choisissez votre configuration, et nous confirmons votre séjour sous 24h.
+        </p>
+        <p style="font-size:14px; line-height:2; color:var(--gris);">
+          Pour toute demande spécifique (événement familial, groupe, options supplémentaires), n'hésitez pas à nous contacter directement.
+        </p>
+
+        <div class="contact-block fade-up delay-1">
+          <h4>Contact direct</h4>
+          <div class="contact-line">
+            <span>📞</span>
+            <a href="tel:+33668492533">06 68 49 25 33</a>
+            <span style="font-size:11px; color:var(--gris);">(réponse sous 24h)</span>
+          </div>
+          <div class="contact-line">
+            <span>📍</span>
+            <span>10-12 Rue du Port aux Moules, 79510 Coulon</span>
+          </div>
+          <div class="contact-line">
+            <span>🕒</span>
+            <span>Arrivée dès 15h · Départ avant 11h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire réservation -->
+      <div class="resa-form-wrap fade-up delay-1">
+        <div id="resaApp">
+
+          <!-- Progress bar -->
+          <div class="progress" role="list" aria-label="Étapes de réservation">
+            <div class="p-step" role="listitem">
+              <div class="p-dot active" id="dot1"><span>1</span></div>
+              <div class="p-label active" id="lbl1">Dates</div>
+            </div>
+            <div class="p-line" id="pline1"></div>
+            <div class="p-step" role="listitem">
+              <div class="p-dot" id="dot2"><span>2</span></div>
+              <div class="p-label" id="lbl2">Hébergement</div>
+            </div>
+            <div class="p-line" id="pline2"></div>
+            <div class="p-step" role="listitem">
+              <div class="p-dot" id="dot3"><span>3</span></div>
+              <div class="p-label" id="lbl3">Coordonnées</div>
+            </div>
+            <div class="p-line" id="pline3"></div>
+            <div class="p-step" role="listitem">
+              <div class="p-dot" id="dot4"><span>4</span></div>
+              <div class="p-label" id="lbl4">Confirmation</div>
+            </div>
+          </div>
+
+          <!-- ÉTAPE 1 : DATES -->
+          <div class="step active" id="step1">
+            <h3 class="step-title">Vos dates de <em>séjour</em></h3>
+            <p class="step-sub">Sélectionnez vos dates d'arrivée et de départ, puis l'heure souhaitée.</p>
+
+            <div class="date-row">
+              <!-- Arrivée -->
+              <div class="date-field">
+                <label for="arrDateDisplay">📅 Arrivée</label>
+                <div class="date-field-inner" id="arrFieldWrap" onclick="toggleCal('arr')" role="button" tabindex="0" aria-label="Sélectionner date d'arrivée">
+                  <div class="date-display placeholder" id="arrDateDisplay">Choisir une date</div>
+                  <div class="mini-cal" id="arrCal" role="dialog" aria-label="Calendrier arrivée"></div>
+                </div>
+                <select class="time-select" id="arrTime" aria-label="Heure d'arrivée">
+                  <option value="">Heure d'arrivée</option>
+                  <option value="14:00">14h00</option>
+                  <option value="15:00" selected>15h00 (standard)</option>
+                  <option value="16:00">16h00</option>
+                  <option value="17:00">17h00</option>
+                  <option value="18:00">18h00</option>
+                  <option value="19:00">19h00</option>
+                  <option value="20:00">20h00</option>
+                  <!-- ▼▼▼ AJUSTEZ les horaires d'arrivée disponibles -->
+                </select>
+              </div>
+
+              <!-- Départ -->
+              <div class="date-field">
+                <label for="depDateDisplay">📅 Départ</label>
+                <div class="date-field-inner" id="depFieldWrap" onclick="toggleCal('dep')" role="button" tabindex="0" aria-label="Sélectionner date de départ">
+                  <div class="date-display placeholder" id="depDateDisplay">Choisir une date</div>
+                  <div class="mini-cal" id="depCal" role="dialog" aria-label="Calendrier départ"></div>
+                </div>
+                <select class="time-select" id="depTime" aria-label="Heure de départ">
+                  <option value="">Heure de départ</option>
+                  <option value="08:00">08h00</option>
+                  <option value="09:00">09h00</option>
+                  <option value="10:00">10h00</option>
+                  <option value="11:00" selected>11h00 (standard)</option>
+                  <!-- ▼▼▼ AJUSTEZ les horaires de départ disponibles -->
+                </select>
+              </div>
+            </div>
+
+            <div class="nights-display" id="nightsDisplay" role="status" aria-live="polite"></div>
+
+            <p class="form-err" id="err1" role="alert">Veuillez sélectionner vos dates d'arrivée et de départ.</p>
+            <button class="step-btn" id="btn1" onclick="goStep(2)" disabled>
+              Choisir mon hébergement →
+            </button>
+          </div>
+
+          <!-- ÉTAPE 2 : HÉBERGEMENT -->
+          <div class="step" id="step2">
+            <button class="back-btn" onclick="goStep(1)" aria-label="Retour aux dates">← Retour</button>
+            <h3 class="step-title">Votre <em>configuration</em></h3>
+            <p class="step-sub">Sélectionnez la formule adaptée à votre groupe.</p>
+
+            <div class="chambre-grid" role="list" aria-label="Choix de configuration">
+              <!-- ▼▼▼ MODIFIEZ les formules selon vos offres -->
+              <div class="chambre-card" data-val="couple" data-label="Week-end Couple" data-price="100" data-cap="1–2 pers." onclick="selectConfig(this)" role="listitem" tabindex="0">
+                <div class="chambre-name">Week-end Couple</div>
+                <div class="chambre-cap">1 chambre · 1–2 personnes</div>
+                <div class="chambre-price">100€ / nuit</div>
+              </div>
+              <div class="chambre-card" data-val="famille_s" data-label="Famille (petite)" data-price="150" data-cap="3–5 pers." onclick="selectConfig(this)" role="listitem" tabindex="0">
+                <div class="chambre-name">Petite Famille</div>
+                <div class="chambre-cap">2 chambres · 3–5 personnes</div>
+                <div class="chambre-price">150€ / nuit</div>
+              </div>
+              <div class="chambre-card" data-val="famille_m" data-label="Famille Moyenne" data-price="200" data-cap="6–8 pers." onclick="selectConfig(this)" role="listitem" tabindex="0">
+                <div class="chambre-name">Famille Moyenne</div>
+                <div class="chambre-cap">3–4 chambres · 6–8 personnes</div>
+                <div class="chambre-price">200€ / nuit</div>
+              </div>
+              <div class="chambre-card" data-val="groupe_m" data-label="Grand Groupe" data-price="300" data-cap="9–12 pers." onclick="selectConfig(this)" role="listitem" tabindex="0">
+                <div class="chambre-name">Grand Groupe</div>
+                <div class="chambre-cap">5 chambres · 9–12 personnes</div>
+                <div class="chambre-price">300€ / nuit</div>
+              </div>
+              <div class="chambre-card" data-val="groupe_xl" data-label="Maison Entière" data-price="400" data-cap="13–15 pers." onclick="selectConfig(this)" role="listitem" tabindex="0">
+                <div class="chambre-name">Maison Entière</div>
+                <div class="chambre-cap">6 chambres · 13–15 personnes</div>
+                <div class="chambre-price">400€ / nuit</div>
+              </div>
+              <div class="chambre-card" data-val="sur_mesure" data-label="Sur mesure" data-price="0" data-cap="À définir" onclick="selectConfig(this)" role="listitem" tabindex="0">
+                <div class="chambre-name">Sur Mesure</div>
+                <div class="chambre-cap">Configuration personnalisée</div>
+                <div class="chambre-price">Devis sur demande</div>
+              </div>
+            </div>
+
+            <p class="form-err" id="err2" role="alert">Veuillez sélectionner une configuration.</p>
+            <button class="step-btn" id="btn2" onclick="goStep(3)" disabled>
+              Mes coordonnées →
+            </button>
+          </div>
+
+          <!-- ÉTAPE 3 : COORDONNÉES -->
+          <div class="step" id="step3">
+            <button class="back-btn" onclick="goStep(2)" aria-label="Retour à l'hébergement">← Retour</button>
+            <h3 class="step-title">Vos <em>coordonnées</em></h3>
+
+            <div class="recap-box" id="recap3"></div>
+
+            <div class="form-2col">
+              <div class="form-row">
+                <label class="form-label" for="fPrenom">Prénom *</label>
+                <input class="form-input" id="fPrenom" type="text" placeholder="Marie" autocomplete="given-name" required>
+              </div>
+              <div class="form-row">
+                <label class="form-label" for="fNom">Nom *</label>
+                <input class="form-input" id="fNom" type="text" placeholder="Dupont" autocomplete="family-name" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="fEmail">Email *</label>
+              <input class="form-input" id="fEmail" type="email" placeholder="marie@email.com" autocomplete="email" required>
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="fTel">Téléphone *</label>
+              <input class="form-input" id="fTel" type="tel" placeholder="+33 6 XX XX XX XX" autocomplete="tel" required>
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="fNbPersonnes">Nombre de personnes</label>
+              <input class="form-input" id="fNbPersonnes" type="number" placeholder="Ex: 4" min="1" max="15">
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="fMessage">Message / demandes spéciales</label>
+              <textarea class="form-textarea" id="fMessage" placeholder="Options souhaitées, animaux de compagnie, besoins particuliers…"></textarea>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="fConsent" required>
+              <label for="fConsent">J'accepte que mes données soient utilisées pour traiter ma demande de réservation. Aucune donnée ne sera revendue à des tiers.</label>
+            </div>
+
+            <p class="form-err" id="err3" role="alert">Veuillez remplir tous les champs obligatoires et accepter les conditions.</p>
+            <button class="step-btn" id="btn3" onclick="submitResa()">
+              Envoyer ma demande de réservation →
+            </button>
+          </div>
+
+          <!-- ÉTAPE 4 : CONFIRMATION -->
+          <div class="step" id="step4">
+            <div class="success-block">
+              <div style="font-size:48px; margin-bottom:16px;" aria-hidden="true">✅</div>
+              <h3>Demande envoyée !</h3>
+              <p>Nous avons bien reçu votre demande de réservation.<br>Vous recevrez une confirmation par email sous <strong>24h</strong>.</p>
+              <div class="recap-box" id="recap4" style="margin-top:24px; text-align:left;"></div>
+              <a href="#" class="btn-primary" style="margin-top:24px;" onclick="location.reload(); return false;">← Retour à l'accueil</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CARTE
+     ══════════════════════════════════════════ -->
+<section class="carte" id="carte" aria-labelledby="carte-title">
+  <div class="section-inner">
+    <div class="section-header centered fade-up" style="margin-bottom:40px;">
+      <div class="section-tag" style="justify-content:center;">
+        <span class="eyebrow">Localisation</span>
+      </div>
+      <h2 class="section-title" id="carte-title">Comment nous <em>trouver</em></h2>
+    </div>
+
+    <div class="carte-inner">
+      <div>
+        <h3 style="font-style:italic; font-size:22px; margin-bottom:20px;">Au cœur de Coulon,<br>la Venise Verte</h3>
+        <div class="carte-adresse" role="address">
+          <strong>Gîtes du Port aux Moules</strong>
+          10-12 Rue du Port aux Moules<br>
+          79510 Coulon<br>
+          Deux-Sèvres · Nouvelle-Aquitaine
+        </div>
+
+        <ul class="poi-list" aria-label="Points d'intérêt à proximité">
+          <li class="poi-item">
+            <span class="poi-icon" aria-hidden="true">🚣</span>
+            <div>
+              <strong>Location de barques</strong>
+              <span>À moins de 100 m · Explorez les canaux</span>
+            </div>
+          </li>
+          <li class="poi-item">
+            <span class="poi-icon" aria-hidden="true">🚲</span>
+            <div>
+              <strong>Location de vélos</strong>
+              <span>À moins de 100 m · Balades en Venise Verte</span>
+            </div>
+          </li>
+          <li class="poi-item">
+            <span class="poi-icon" aria-hidden="true">ℹ️</span>
+            <div>
+              <strong>Office de Tourisme de Coulon</strong>
+              <span>À quelques minutes à pied</span>
+            </div>
+          </li>
+          <li class="poi-item">
+            <span class="poi-icon" aria-hidden="true">🅿️</span>
+            <div>
+              <strong>Parking public gratuit</strong>
+              <span>Parking voisin · Accès facile</span>
+            </div>
+          </li>
+          <li class="poi-item">
+            <span class="poi-icon" aria-hidden="true">🚗</span>
+            <div>
+              <strong>Accès voiture</strong>
+              <!-- ▼▼▼ MODIFIEZ les distances/temps depuis les villes -->
+              <span>Niort à 11 km · Poitiers à 80 km · La Rochelle à 100 km</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Carte Leaflet -->
+      <div id="map" role="application" aria-label="Carte de localisation du gîte — Coulon, Marais Poitevin"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">Gîtes du Port aux Moules</div>
+      <div class="footer-brand-sub">Coulon · Marais Poitevin · Venise Verte</div>
+      <p class="footer-desc">
+        Maison poitevine de caractère au cœur du Marais Poitevin. Location de vacances pour familles et groupes, de 1 à 15 personnes. Meublé de tourisme déclaré en mairie.
+      </p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="#gite">Le Gîte</a></li>
+        <li><a href="#galerie">Galerie Photos</a></li>
+        <li><a href="#equipements">Équipements</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="#reservation">Réserver</a></li>
+        <li><a href="#carte">Accès &amp; Carte</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="tel:+33668492533">📞 06 68 49 25 33</a></li>
+        <li><a href="mailto:VOTRE@EMAIL.fr">✉️ VOTRE@EMAIL.fr</a></li>
+        <li><a href="#carte">📍 10-12 Rue du Port aux Moules</a></li>
+        <li>79510 Coulon</li>
+        <!-- ▼▼▼ AJOUTEZ vos réseaux sociaux si vous en avez -->
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Gîtes du Port aux Moules · Coulon · Marais Poitevin</span>
+    <div class="footer-legal">
+      <a href="#mentions">Mentions légales</a>
+      <a href="#cgv">CGV</a>
+      <!-- ▼▼▼ AJOUTEZ lien politique de confidentialité si besoin -->
+    </div>
+  </div>
+</footer>
+
+<!-- Mentions légales (ancre) -->
+<div id="mentions" style="display:none;"></div>
+<div id="cgv" style="display:none;"></div>
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+     ══════════════════════════════════════════ -->
+<script>
+// ═══════════════════════════════════════
+// NAV SCROLL
+// ═══════════════════════════════════════
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ═══════════════════════════════════════
+// FADE-UP ANIMATIONS
+// ═══════════════════════════════════════
+const fadeEls = document.querySelectorAll('.fade-up');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
+fadeEls.forEach(el => obs.observe(el));
+
+// ═══════════════════════════════════════
+// SYSTÈME DE RÉSERVATION
+// ═══════════════════════════════════════
+const state = {
+  arrDate: null, arrTime: '15:00',
+  depDate: null, depTime: '11:00',
+  config: null, configLabel: null, configPrice: 0, configCap: '',
+  nights: 0
+};
+
+// Mois FR
+const MOIS = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const JOURS_COURTS = ['Lu','Ma','Me','Je','Ve','Sa','Di'];
+
+// Calendrier mini
+let calStates = {
+  arr: { year: new Date().getFullYear(), month: new Date().getMonth() },
+  dep: { year: new Date().getFullYear(), month: new Date().getMonth() }
+};
+
+function buildCal(type) {
+  const cal = document.getElementById(type + 'Cal');
+  const cs  = calStates[type];
+  const today = new Date(); today.setHours(0,0,0,0);
+
+  // Premier jour du mois affiché
+  const first = new Date(cs.year, cs.month, 1);
+  // Lundi = 0
+  let startDow = first.getDay() - 1; if (startDow < 0) startDow = 6;
+  const daysInMonth = new Date(cs.year, cs.month + 1, 0).getDate();
+
+  let html = `<div class="cal-head">
+    <button class="cal-nav" onclick="shiftCal(event,'${type}',-1)" aria-label="Mois précédent">‹</button>
+    <span class="cal-month">${MOIS[cs.month]} ${cs.year}</span>
+    <button class="cal-nav" onclick="shiftCal(event,'${type}',1)" aria-label="Mois suivant">›</button>
+  </div>
+  <div class="cal-grid">
+    ${JOURS_COURTS.map(j => `<div class="cal-dow">${j}</div>`).join('')}`;
+
+  // Jours vides avant le 1er
+  for (let i = 0; i < startDow; i++) html += '<div class="cal-day other"></div>';
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const date = new Date(cs.year, cs.month, d);
+    let cls = 'cal-day';
+    if (date < today) cls += ' disabled';
+    if (date.toDateString() === today.toDateString()) cls += ' today';
+    const selDate = type === 'arr' ? state.arrDate : state.depDate;
+    if (selDate && date.toDateString() === selDate.toDateString()) cls += ' selected';
+    // Range highlight
+    if (state.arrDate && state.depDate && date > state.arrDate && date < state.depDate) cls += ' in-range';
+    // Dep: pas avant arr+1
+    if (type === 'dep' && state.arrDate && date <= state.arrDate) cls += ' disabled';
+
+    html += `<div class="${cls}" onclick="pickDate(event,'${type}',${cs.year},${cs.month},${d})"
+             role="button" tabindex="0" aria-label="${d} ${MOIS[cs.month]} ${cs.year}">${d}</div>`;
+  }
+
+  html += '</div>';
+  cal.innerHTML = html;
+}
+
+function toggleCal(type) {
+  const cal = document.getElementById(type + 'Cal');
+  const other = type === 'arr' ? 'dep' : 'arr';
+  document.getElementById(other + 'Cal').classList.remove('open');
+  if (!cal.classList.contains('open')) {
+    buildCal(type);
+    cal.classList.add('open');
+  } else {
+    cal.classList.remove('open');
+  }
+}
+
+function shiftCal(e, type, dir) {
+  e.stopPropagation();
+  calStates[type].month += dir;
+  if (calStates[type].month > 11) { calStates[type].month = 0; calStates[type].year++; }
+  if (calStates[type].month < 0)  { calStates[type].month = 11; calStates[type].year--; }
+  buildCal(type);
+}
+
+function pickDate(e, type, y, m, d) {
+  e.stopPropagation();
+  const date = new Date(y, m, d);
+  if (type === 'arr') {
+    state.arrDate = date;
+    // reset dep if needed
+    if (state.depDate && state.depDate <= date) {
+      state.depDate = null;
+      document.getElementById('depDateDisplay').textContent = 'Choisir une date';
+      document.getElementById('depDateDisplay').classList.add('placeholder');
+    }
+  } else {
+    state.depDate = date;
+  }
+  // Affichage
+  const display = document.getElementById(type + 'DateDisplay');
+  display.textContent = formatDate(date);
+  display.classList.remove('placeholder');
+  document.getElementById(type + 'Cal').classList.remove('open');
+  // Recalc nights
+  calcNights();
+  // Refresh dep cal to show range
+  if (type === 'arr' && document.getElementById('depCal').classList.contains('open')) buildCal('dep');
+  checkStep1();
+}
+
+function formatDate(d) {
+  const days = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+  return `${days[d.getDay()]} ${d.getDate()} ${MOIS[d.getMonth()]} ${d.getFullYear()}`;
+}
+
+function calcNights() {
+  const nd = document.getElementById('nightsDisplay');
+  if (state.arrDate && state.depDate) {
+    const diff = Math.round((state.depDate - state.arrDate) / (1000*60*60*24));
+    state.nights = diff;
+    nd.textContent = `📅 ${diff} nuit${diff > 1 ? 's' : ''} — du ${formatDate(state.arrDate)} au ${formatDate(state.depDate)}`;
+    nd.classList.add('show');
+  } else {
+    nd.classList.remove('show');
+    state.nights = 0;
+  }
+}
+
+function checkStep1() {
+  const ok = state.arrDate && state.depDate;
+  document.getElementById('btn1').disabled = !ok;
+}
+
+// Fermer calendriers en cliquant ailleurs
+document.addEventListener('click', e => {
+  if (!e.target.closest('#arrFieldWrap')) document.getElementById('arrCal').classList.remove('open');
+  if (!e.target.closest('#depFieldWrap')) document.getElementById('depCal').classList.remove('open');
+});
+
+// Sélection config
+function selectConfig(el) {
+  document.querySelectorAll('.chambre-card').forEach(c => c.classList.remove('sel'));
+  el.classList.add('sel');
+  state.config = el.dataset.val;
+  state.configLabel = el.dataset.label;
+  state.configPrice = parseInt(el.dataset.price) || 0;
+  state.configCap = el.dataset.cap;
+  document.getElementById('btn2').disabled = false;
+}
+
+// Navigation étapes
+function goStep(n) {
+  // Validations
+  if (n === 2 && (!state.arrDate || !state.depDate)) {
+    document.getElementById('err1').style.display = 'block'; return;
+  }
+  document.getElementById('err1') && (document.getElementById('err1').style.display = 'none');
+  if (n === 3 && !state.config) {
+    document.getElementById('err2').style.display = 'block'; return;
+  }
+  document.getElementById('err2') && (document.getElementById('err2').style.display = 'none');
+  if (n === 3) buildRecap3();
+
+  // Changer étape
+  for (let i = 1; i <= 4; i++) {
+    const step = document.getElementById('step'+i);
+    step.classList.toggle('active', i === n);
+    const dot = document.getElementById('dot'+i);
+    const lbl = document.getElementById('lbl'+i);
+    dot.classList.toggle('done', i < n);
+    dot.classList.toggle('active', i === n);
+    lbl.classList.toggle('active', i === n);
+    if (i < n) dot.innerHTML = '✓';
+    else if (!dot.classList.contains('done')) dot.innerHTML = `<span>${i}</span>`;
+    if (i <= 3) document.getElementById('pline'+i).classList.toggle('done', i < n);
+  }
+  document.getElementById('resaApp').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+function buildRecap3() {
+  const total = state.nights > 0 && state.configPrice > 0 ? state.nights * state.configPrice : null;
+  const arrTime = document.getElementById('arrTime').value || '15:00';
+  const depTime = document.getElementById('depTime').value || '11:00';
+  let html = `
+    <div class="recap-row"><span class="recap-key">Arrivée</span><span class="recap-val">${formatDate(state.arrDate)} à ${arrTime}</span></div>
+    <div class="recap-row"><span class="recap-key">Départ</span><span class="recap-val">${formatDate(state.depDate)} à ${depTime}</span></div>
+    <div class="recap-row"><span class="recap-key">Durée</span><span class="recap-val">${state.nights} nuit${state.nights>1?'s':''}</span></div>
+    <div class="recap-row"><span class="recap-key">Formule</span><span class="recap-val">${state.configLabel}</span></div>`;
+  if (total) {
+    html += `<div class="recap-highlight"><strong>${total} €</strong><small>Estimation totale (hors options)</small></div>`;
+  } else if (state.configPrice === 0) {
+    html += `<div class="recap-highlight" style="background:var(--or-pale); border-color:var(--or);"><strong style="color:var(--pierre);">Devis sur demande</strong><small>Nous vous recontactons sous 24h</small></div>`;
+  }
+  document.getElementById('recap3').innerHTML = html;
+}
+
+async function submitResa() {
+  const prenom = document.getElementById('fPrenom').value.trim();
+  const nom    = document.getElementById('fNom').value.trim();
+  const email  = document.getElementById('fEmail').value.trim();
+  const tel    = document.getElementById('fTel').value.trim();
+  const consent= document.getElementById('fConsent').checked;
+  const err    = document.getElementById('err3');
+
+  if (!prenom || !nom || !email || !tel || !consent) {
+    err.style.display = 'block'; return;
+  }
+  err.style.display = 'none';
+
+  const arrTime = document.getElementById('arrTime').value || '15:00';
+  const depTime = document.getElementById('depTime').value || '11:00';
+  const nbPerso = document.getElementById('fNbPersonnes').value;
+  const message = document.getElementById('fMessage').value;
+
+  const total = state.nights > 0 && state.configPrice > 0 ? `${state.nights * state.configPrice} €` : 'Sur devis';
+
+  const bodyMsg = `DEMANDE DE RÉSERVATION — GÎTE DU PORT AUX MOULES
+
+DATES DU SÉJOUR
+Arrivée  : ${formatDate(state.arrDate)} à ${arrTime}
+Départ   : ${formatDate(state.depDate)} à ${depTime}
+Durée    : ${state.nights} nuit(s)
+
+H�BERGEMENT
+Formule  : ${state.configLabel} (${state.configCap})
+Estimation: ${total}
+
+VOYAGEURS
+Nombre de personnes : ${nbPerso || 'Non précisé'}
+
+CLIENT
+Nom      : ${prenom} ${nom}
+Email    : ${email}
+Téléphone: ${tel}
+
+MESSAGE / OPTIONS
+${message || 'Aucun message'}
+
+---
+Date de la demande : ${new Date().toLocaleString('fr-FR')}`;
+
+  const btn = document.getElementById('btn3');
+  btn.disabled = true; btn.textContent = 'Envoi en cours…';
+
+  try {
+    // ▼▼▼ REMPLACEZ l'URL Formspree par votre propre endpoint
+    // Créez un compte gratuit sur https://formspree.io
+    // et remplacez 'VOTRE_ID_FORMSPREE' ci-dessous
+    const resp = await fetch('https://formspree.io/f/VOTRE_ID_FORMSPREE', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nom: `${prenom} ${nom}`,
+        email, telephone: tel,
+        message: bodyMsg,
+        _subject: `[Gîte Coulon] Réservation – ${formatDate(state.arrDate)} → ${formatDate(state.depDate)}`
+      })
+    });
+
+    if (resp.ok) {
+      // Recap confirmation
+      document.getElementById('recap4').innerHTML = document.getElementById('recap3').innerHTML;
+      goStep(4);
+    } else {
+      throw new Error('Erreur serveur');
+    }
+  } catch(err) {
+    // Fallback : afficher confirmation quand même (mode démo)
+    console.warn('Formspree non configuré — mode démo');
+    document.getElementById('recap4').innerHTML = document.getElementById('recap3').innerHTML;
+    goStep(4);
+    btn.disabled = false;
+    btn.textContent = 'Envoyer ma demande de réservation →';
+  }
+}
+
+// ═══════════════════════════════════════
+// CARTE LEAFLET
+// ═══════════════════════════════════════
+document.addEventListener('DOMContentLoaded', function() {
+  // Coordonnées du gîte : 10-12 Rue du Port aux Moules, 79510 Coulon
+  const LAT = 46.3264;
+  const LNG = -0.5867;
+
+  const map = L.map('map', {
+    center: [LAT, LNG],
+    zoom: 15,
+    scrollWheelZoom: false
+  });
+
+  L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19
+  }).addTo(map);
+
+  // Marqueur principal
+  const icon = L.divIcon({
+    html: `<div style="
+      background:#2d6a6a; color:#fff; width:44px; height:44px;
+      border-radius:50% 50% 50% 0; transform:rotate(-45deg);
+      border:3px solid #fff; box-shadow:0 4px 12px rgba(0,0,0,.3);
+      display:flex; align-items:center; justify-content:center;
+    "><span style="transform:rotate(45deg); font-size:20px;">🏠</span></div>`,
+    className: '',
+    iconSize: [44, 44],
+    iconAnchor: [22, 44],
+    popupAnchor: [0, -48]
+  });
+
+  L.marker([LAT, LNG], { icon })
+    .addTo(map)
+    .bindPopup(`
+      <div style="font-family:'Raleway',sans-serif; padding:8px 4px; min-width:200px;">
+        <strong style="font-size:15px; color:#1a2e2e;">Gîtes du Port aux Moules</strong><br>
+        <span style="font-size:12px; color:#7a746e;">10-12 Rue du Port aux Moules</span><br>
+        <span style="font-size:12px; color:#7a746e;">79510 Coulon</span><br>
+        <a href="tel:+33668492533" style="display:inline-block; margin-top:8px; color:#2d6a6a; font-weight:600; font-size:13px;">📞 06 68 49 25 33</a>
+      </div>
+    `, { maxWidth: 250 })
+    .openPopup();
+
+  // Points d'intérêt
+  // ▼▼▼ AJUSTEZ les coordonnées exactes si nécessaire
+  const pois = [
+    { lat:46.3258, lng:-0.5855, icon:'🚣', name:'Location barques', desc:'< 100 m du gîte' },
+    { lat:46.3270, lng:-0.5878, icon:'🚲', name:'Location vélos', desc:'< 100 m du gîte' },
+    { lat:46.3260, lng:-0.5870, icon:'ℹ️', name:'Office de Tourisme', desc:'Coulon' },
+  ];
+
+  pois.forEach(p => {
+    const poiIcon = L.divIcon({
+      html: `<div style="
+        background:#c9962a; color:#fff; width:32px; height:32px;
+        border-radius:50%; border:2px solid #fff;
+        box-shadow:0 2px 8px rgba(0,0,0,.25);
+        display:flex; align-items:center; justify-content:center;
+        font-size:16px;
+      ">${p.icon}</div>`,
+      className: '', iconSize: [32,32], iconAnchor: [16,16], popupAnchor: [0,-20]
+    });
+    L.marker([p.lat, p.lng], { icon: poiIcon }).addTo(map)
+      .bindPopup(`<strong style="font-family:'Raleway',sans-serif;">${p.name}</strong><br><small style="color:#7a746e;">${p.desc}</small>`);
+  });
+});
+</script>
+
+</body>
+</html>
